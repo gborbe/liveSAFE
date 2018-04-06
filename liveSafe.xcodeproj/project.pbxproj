@@ -20,6 +20,7 @@
 		8E871F10204DF1FF00101CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E871F0F204DF1FF00101CE0 /* GoogleService-Info.plist */; };
 		8ED081312072B53A00F0A84F /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0812F2072B53A00F0A84F /* SignInViewController.m */; };
 		8ED081372072B73A00F0A84F /* OrgEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED081362072B73900F0A84F /* OrgEditViewController.m */; };
+		8ED0813A20780D5500F0A84F /* Organizations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0813920780D5500F0A84F /* Organizations.m */; };
 		E48D2BFB7AA0CF7F6EB1546A /* libPods-liveSafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC106FDA7B87F0381DB6F79A /* libPods-liveSafe.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		8ED081302072B53A00F0A84F /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		8ED081352072B73900F0A84F /* OrgEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgEditViewController.h; sourceTree = "<group>"; };
 		8ED081362072B73900F0A84F /* OrgEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgEditViewController.m; sourceTree = "<group>"; };
+		8ED0813820780D5500F0A84F /* Organizations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Organizations.h; sourceTree = "<group>"; };
+		8ED0813920780D5500F0A84F /* Organizations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Organizations.m; sourceTree = "<group>"; };
 		DC106FDA7B87F0381DB6F79A /* libPods-liveSafe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-liveSafe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +122,8 @@
 				8E871EFA204DF1D400101CE0 /* AppDelegate.m */,
 				8E871EFC204DF1D400101CE0 /* ViewController.h */,
 				8E871EFD204DF1D400101CE0 /* ViewController.m */,
+				8ED0813820780D5500F0A84F /* Organizations.h */,
+				8ED0813920780D5500F0A84F /* Organizations.m */,
 				8E69351A2054CC2400B208F8 /* SheltersViewController.h */,
 				8E69351B2054CC2400B208F8 /* SheltersViewController.m */,
 				8E69351D2054CD1200B208F8 /* ShelterDetailsViewController.h */,
@@ -279,6 +284,7 @@
 				8E871F09204DF1D400101CE0 /* main.m in Sources */,
 				8E69351C2054CC2400B208F8 /* SheltersViewController.m in Sources */,
 				8ED081372072B73A00F0A84F /* OrgEditViewController.m in Sources */,
+				8ED0813A20780D5500F0A84F /* Organizations.m in Sources */,
 				8E871EFB204DF1D400101CE0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

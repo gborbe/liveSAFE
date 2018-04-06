@@ -11,6 +11,7 @@
 #import "MealsViewController.h"
 #import "SheltersViewController.h"
 #import "OrganizationEditViewController.h"
+#import "Organizations.h"
 
 @import Firebase;
 
@@ -40,6 +41,9 @@
             
             //access dictionary of a specific location
             NSDictionary *entry = [self.shelterDataCollection objectForKey:rootData];
+            
+            //Bring this dictionary over to create new object for Organization class
+            //[Organizations createOrg:(NSDictionary)entry];
             
             //check to see location's resource classifications (shelter and/or food and/or urban rest stops)
             NSString *shelter = [entry objectForKey:@"hasShelter"];
