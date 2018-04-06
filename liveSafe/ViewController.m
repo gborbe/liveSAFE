@@ -18,8 +18,10 @@
 @interface ViewController ()
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) NSMutableDictionary *databaseCollection;
-@property (strong, nonatomic) NSMutableDictionary *shelterDataCollection;
+@property (strong, nonatomic) NSDictionary *shelterDataCollection;
 @property (strong, nonatomic) NSMutableDictionary *mealsDataCollection;
+@property (strong, nonatomic) NSMutableArray *orgObjectLibrary;
+@property (weak, nonatomic) IBOutlet UIButton *checkArray;
 
 @end
 
@@ -28,6 +30,9 @@
 @end
 
 @implementation ViewController
+- (IBAction)checkArray:(id)sender {
+    NSLog(@"Array: %@",self.orgObjectLibrary);
+}
 
 - (void)viewDidLoad {
     self.ref = [[FIRDatabase database] reference];
@@ -43,14 +48,13 @@
             NSDictionary *entry = [self.shelterDataCollection objectForKey:rootData];
             
             //Bring this dictionary over to create new object for Organization class
-            //[Organizations createOrg:(NSDictionary)entry];
+            Organizations *org = [[Organizations alloc] init];
+            org.name = [NSString stringWithString:[entry objectForKey:@"name"]];
+            org.address = [NSString stringWithString:[entry objectForKey:@"address"]];
+            org.phone = [NSString stringWithString:[entry objectForKey:@"phone"]];
+            org.website = [NSString stringWithString:[entry objectForKey:@"website"]];
             
-            //check to see location's resource classifications (shelter and/or food and/or urban rest stops)
-            NSString *shelter = [entry objectForKey:@"hasShelter"];
-            
-            if ([shelter isEqualToString:@"YES"]) {
-                NSLog(@"Imma shelter: %@",entry);
-            }
+            [self.orgObjectLibrary addObject:org];
 
         }
         
@@ -65,8 +69,6 @@
     } withCancelBlock:^(NSError * _Nonnull error) {
         NSLog(@"%@", error.localizedDescription);
     }];
-    
-    
     
     
 }

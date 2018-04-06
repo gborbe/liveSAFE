@@ -22,10 +22,8 @@
 @property (nonatomic) NSString *lastUpdate;
 @property (nonatomic) NSInteger *minAge;
 @property (nonatomic) NSInteger *maxAge;
-@property (strong, nonatomic) NSDictionary *data;
 @property (nonatomic) BOOL shelter;
 @property (nonatomic) BOOL meals;
 @property (nonatomic) BOOL restStop;
 
-+ (instancetype)createOrg;
 @end
