@@ -8,10 +8,13 @@
 
 #import "CustomCellViewController.h"
 #import "Organizations.h"
-
+@import CoreLocation;
+@import MapKit;
 @interface CustomCellViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 
 @end
 
@@ -19,6 +22,35 @@
 
 
 #pragma mark - Setup
+- (void)setupMap
+{
+    NSString *address; // GRAB FROM DATA OBJECT
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:address
+                 completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+                     
+                     if (error) {
+                         NSLog(@"ERROR! - %@", error.localizedDescription);
+                     }
+                     
+                     if (placemarks[0]) {
+                         
+                         CLPlacemark *placemark = placemarks[0];
+                         CLLocationCoordinate2D coordinate = placemark.location.coordinate;
+                         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                         annotation.coordinate = coordinate;
+                         annotation.title = @"GRAB TITLE FROM DATA OBJECT";
+                         
+                         [self.mapView addAnnotation:annotation];
+                         self.mapView.centerCoordinate = coordinate;
+                         
+                     }
+                     
+                 }];
+    
+    
+}
 - (void)setup
 {
     // make sure to add "<UITableViewDataSource>" to

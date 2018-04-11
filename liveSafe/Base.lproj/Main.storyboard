@@ -226,6 +226,7 @@
                         <color key="backgroundColor" red="0.97254901959999995" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="yUY-O0-n4t" id="O6D-Yi-7dt"/>
                         <outlet property="tableView" destination="7rl-k4-brU" id="EbX-df-9Hh"/>
                     </connections>
                 </viewController>
@@ -242,6 +243,6 @@
         <image name="sheets" width="133" height="95"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uXc-7m-0Cn"/>
+        <segue reference="QN1-O1-AAs"/>
     </inferredMetricsTieBreakers>
 </document>
