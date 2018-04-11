@@ -73,6 +73,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Auth
   - FirebaseUI/Google
+  - GoogleSignIn
 
 SPEC CHECKSUMS:
   Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
@@ -90,6 +91,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 0d502529125af41a48672bca6b3e320932b2748c
+PODFILE CHECKSUM: 9b02efac1e62551c3e61919280a805a7775bedce
 
 COCOAPODS: 1.4.0

@@ -10,6 +10,7 @@
 
 @interface Organizations : UIViewController
 
+//Attributes of each object/organization in our array
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *address;
 @property (nonatomic) NSString *phone;

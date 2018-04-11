@@ -12,5 +12,6 @@ pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Google'
+pod 'GoogleSignIn'
 
 end

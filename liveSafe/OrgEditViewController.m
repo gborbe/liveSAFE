@@ -6,21 +6,47 @@
 //
 
 #import "OrgEditViewController.h"
+#import "ViewController.h"
+#import "AppDelegate.h"
+#import "ViewController.h"
+@import Firebase;
+@import FirebaseAuthUI;
+@import FirebaseGoogleAuthUI;
 
 @interface OrgEditViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *welcomeTitle;
 
 @end
 
 @implementation OrgEditViewController
 
 - (void)viewDidLoad {
+    [self setup];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)signInButtonPressed:(UIButton *)sender {
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setup {
+    FIRAuth *auth = [FIRAuth auth];
+    self.welcomeTitle.text = [NSString stringWithFormat:@"Welcome, %@", auth.currentUser.displayName];
+    
+}
+- (IBAction)logoutButton:(id)sender {
+    NSError *signOutError;
+    BOOL status = [[FIRAuth auth] signOut:&signOutError];
+    if (!status) {
+        NSLog(@"Error signing out: %@", signOutError);
+        return;
+    }else{
+        NSLog(@"Successfully Signout");
+    }
 }
 
 /*

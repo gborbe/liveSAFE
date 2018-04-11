@@ -8,20 +8,16 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
-#import "MealsViewController.h"
-#import "SheltersViewController.h"
 #import "OrganizationEditViewController.h"
 #import "Organizations.h"
+#import "CustomCellViewController.h"
 
 @import Firebase;
 
 @interface ViewController ()
 @property (strong, nonatomic) FIRDatabaseReference *ref;
-@property (strong, nonatomic) NSMutableDictionary *databaseCollection;
 @property (strong, nonatomic) NSDictionary *shelterDataCollection;
-@property (strong, nonatomic) NSMutableDictionary *mealsDataCollection;
 @property (strong, nonatomic) NSMutableArray *orgObjectLibrary;
-@property (weak, nonatomic) IBOutlet UIButton *checkArray;
 
 @end
 
@@ -30,12 +26,10 @@
 @end
 
 @implementation ViewController
-- (IBAction)checkArray:(id)sender {
-    NSLog(@"Array: %@",self.orgObjectLibrary);
-}
 
 - (void)viewDidLoad {
     self.ref = [[FIRDatabase database] reference];
+    self.orgObjectLibrary = [[NSMutableArray alloc] init];
     [self collectData];
     [super viewDidLoad];
 }
@@ -62,33 +56,14 @@
         NSLog(@"%@", error.localizedDescription);
     }];
     
-    [[self.ref child:@"Meals"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        self.mealsDataCollection = snapshot.value;
-        NSLog(@"%@",self.mealsDataCollection);
-        
-    } withCancelBlock:^(NSError * _Nonnull error) {
-        NSLog(@"%@", error.localizedDescription);
-    }];
-    
-    
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if ([segue.identifier isEqualToString:@"mealsSegue"]) {
-
-        MealsViewController *MVC = segue.destinationViewController;
-        MVC.mealsDictionary = self.mealsDataCollection;
+    if ([segue.identifier isEqualToString:@"tableSegue"]) {
         
-    } else if ([segue.identifier isEqualToString:@"sheltersSegue"]) {
-        
-        SheltersViewController *SVC = segue.destinationViewController;
-        SVC.shelterDictionary = self.shelterDataCollection;
-        
-    } else if ([segue.identifier isEqualToString:@"editSegue"]) {
-        
-        OrganizationEditViewController *OVC = segue.destinationViewController;
-        OVC.orgData = self.shelterDataCollection[@"ROOTS"];
+        CustomCellViewController *CVC = segue.destinationViewController;
+        CVC.orgLibrary = self.orgObjectLibrary;
     }
     
 }

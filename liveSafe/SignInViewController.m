@@ -27,11 +27,16 @@
         return NO;
     }
 }
+- (IBAction)signInButtonPressed:(id)sender
+{
+    UINavigationController *authViewController = [self.authUI authViewController];
+    [self presentViewController:authViewController animated:YES completion:nil];
+}
 
 - (void)authUser {
-    FUIAuth *authUI = [FUIAuth defaultAuthUI];
+    self.authUI = [FUIAuth defaultAuthUI];
     // You need to adopt a FUIAuthDelegate protocol to receive callback
-    authUI.delegate = self;
+    self.authUI.delegate = self;
     NSArray<id<FUIAuthProvider>> *providers = @[[[FUIGoogleAuth alloc] init]];
     self.authUI.providers = providers;
 }
@@ -46,12 +51,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     if (!self.loggedIn) {
-        UINavigationController *authViewController = [self.authUI authViewController];
-        [self presentViewController:authViewController animated:YES completion:nil];
     } else {
         [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
     }
-    
 }
 
 - (void)authUI:(FUIAuth *)authUI
