@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Firebase;
+@import FirebaseAuthUI;
+@import FirebaseGoogleAuthUI;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <FUIAuthDelegate>
 
 
 @end

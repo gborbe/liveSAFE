@@ -15,9 +15,12 @@
 @import Firebase;
 
 @interface ViewController ()
+
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) NSDictionary *shelterDataCollection;
 @property (strong, nonatomic) NSMutableArray *orgObjectLibrary;
+@property (nonatomic) BOOL loggedIn;
+@property (strong, nonatomic) FUIAuth *authUI;
 
 @end
 
@@ -31,8 +34,12 @@
     self.ref = [[FIRDatabase database] reference];
     self.orgObjectLibrary = [[NSMutableArray alloc] init];
     [self collectData];
+    [self setup];
     [super viewDidLoad];
 }
+
+#pragma mark - Database Compiling
+
 - (void)collectData{
     [[self.ref child:@"Shelters"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         self.shelterDataCollection = snapshot.value;
@@ -68,4 +75,63 @@
     
 }
 
+#pragma mark - Firebase Authentication
+
+- (BOOL)loggedIn
+{
+    FIRAuth *auth = [FIRAuth auth];
+    if (auth.currentUser) {
+        NSLog(@"%@ is signed in", auth.currentUser.displayName);
+        return YES;
+    } else {
+        NSLog(@"Nobody is signed in");
+        return NO;
+    }
+}
+
+- (IBAction)signInButtonPressed:(id)sender
+{
+    UINavigationController *authViewController = [self.authUI authViewController];
+    [self presentViewController:authViewController animated:YES completion:nil];
+}
+
+- (void)authUser {
+    self.authUI = [FUIAuth defaultAuthUI];
+    // You need to adopt a FUIAuthDelegate protocol to receive callback
+    self.authUI.delegate = self;
+    NSArray<id<FUIAuthProvider>> *providers = @[[[FUIGoogleAuth alloc] init]];
+    self.authUI.providers = providers;
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+    NSString *sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
+    return [[FUIAuth defaultAuthUI] handleOpenURL:url sourceApplication:sourceApplication];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (!self.loggedIn) {
+    } else {
+        [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
+    }
+}
+
+- (void)authUI:(FUIAuth *)authUI
+didSignInWithUser:(nullable FIRUser *)user
+         error:(nullable NSError *)error {
+    // Implement this method to handle signed in user or error if any.
+}
+
+- (void)setup{
+    if (!self.loggedIn) {
+        [self authUser];
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 @end

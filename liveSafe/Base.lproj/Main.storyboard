@@ -38,7 +38,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="l9M-ft-qbC" kind="modal" id="LcZ-9m-DTO"/>
+                                    <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rNs-C9-e5z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vrg-bv-t5m">
@@ -56,38 +56,13 @@
                         <color key="backgroundColor" red="0.97254901960784312" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="7vG-ES-T0O"/>
+                    <connections>
+                        <segue destination="do3-9K-hJd" kind="modal" identifier="loggedInSegue" id="Hhh-I1-OYU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85.5" y="138.5"/>
-        </scene>
-        <!--Sign In View Controller-->
-        <scene sceneID="YmG-AG-Fvg">
-            <objects>
-                <viewController id="l9M-ft-qbC" customClass="SignInViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vxX-ao-wDa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="w2L-YD-T6O">
-                                <rect key="frame" x="165" y="305" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="sign in"/>
-                                <connections>
-                                    <action selector="signInButtonPressed:" destination="l9M-ft-qbC" eventType="touchUpInside" id="1LK-RA-hnV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="uai-fi-3cl"/>
-                    <connections>
-                        <segue destination="do3-9K-hJd" kind="modal" identifier="loggedInSegue" id="cLz-eG-Id9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S8q-3a-RNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="692.5" y="138.5"/>
         </scene>
         <!--Org Edit View Controller-->
         <scene sceneID="yz3-sP-ztU">
@@ -123,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93w-ki-gge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273.5" y="138.5"/>
+            <point key="canvasLocation" x="827" y="139"/>
         </scene>
         <!--Custom Cell View Controller-->
         <scene sceneID="udr-PK-eVg">
@@ -243,6 +218,6 @@
         <image name="sheets" width="133" height="95"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QN1-O1-AAs"/>
+        <segue reference="uXc-7m-0Cn"/>
     </inferredMetricsTieBreakers>
 </document>
