@@ -41,7 +41,7 @@
 #pragma mark - Database Compiling
 
 - (void)collectData{
-    [[self.ref child:@"Shelters"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+    [[self.ref child:@"Organizations"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         self.shelterDataCollection = snapshot.value;
         for (NSString* rootData in self.shelterDataCollection) {
             
