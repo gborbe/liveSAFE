@@ -35,7 +35,13 @@
     self.orgObjectLibrary = [[NSMutableArray alloc] init];
     [self collectData];
     [self setup];
+    [self locationOpen];
     [super viewDidLoad];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Database Compiling
@@ -130,8 +136,26 @@ didSignInWithUser:(nullable FIRUser *)user
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)locationOpen {
+    //Get hours from Database in this format
+    NSString *open = @"08:00 AM";
+    NSString *close = @"10:00 PM";
+
+    //Get current time
+    NSDate *nowDate = [[NSDate alloc] init];
+
+    //Date Formatter
+    NSDateFormatter *formatTime = [[NSDateFormatter alloc]init];
+    [formatTime setDateFormat:@"hh:mm a"];
+    
+    //Open & Close NSString hours to NSDate
+    NSDate *openDate = [formatTime dateFromString:open];
+    NSDate *closeDate = [formatTime dateFromString:close];
+    
+    //Testing
+    NSLog(@"Current Time: %@",[formatTime stringFromDate:nowDate]);
+    NSLog(@"Open: %@",[formatTime stringFromDate:openDate]);
+    NSLog(@"Close: %@",[formatTime stringFromDate:closeDate]);
 }
+
 @end
