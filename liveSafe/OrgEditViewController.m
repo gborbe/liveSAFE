@@ -25,8 +25,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-- (IBAction)signInButtonPressed:(UIButton *)sender {
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

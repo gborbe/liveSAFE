@@ -8,6 +8,7 @@
 
 #import "CustomCellViewController.h"
 #import "Organizations.h"
+
 @import CoreLocation;
 @import MapKit;
 @interface CustomCellViewController ()
@@ -63,7 +64,9 @@
     // produce a warning
     self.tableView.delegate = self;
 }
+
 #pragma mark - Table View Data Source and Delegate Methods
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Our table only has one section...
@@ -84,18 +87,64 @@
     // we assigned each component of the custom cell we created
     // in interface builder a unique tab number - this is how
     // we get references to those components
-    UILabel *label = (UILabel *)[cell viewWithTag:1];
-    UILabel *label2 = (UILabel *)[cell viewWithTag:2];
-    UILabel *label3 = (UILabel *)[cell viewWithTag:3];
+    UILabel *OrgName = (UILabel *)[cell viewWithTag:1];
+    UILabel *hours = (UILabel *)[cell viewWithTag:3];
     
     // populate the cell
-    label.text = selectedOrg.name;
-    label2.text = selectedOrg.phone;
-    label3.text = selectedOrg.address;
+    OrgName.text = selectedOrg.name;
+    hours.text = @"%@ - %@",selectedOrg.openHour, selectedOrg.closeHour;
+    [self locationOpen: selectedOrg.openHour: selectedOrg.closeHour];
     
     // return our cell
     return cell;
 }
+
+- (void)locationOpen: (NSString *)openTime: (NSString *)closeTime {
+    //Get hours from Database in this format
+    NSString *open = openTime;
+    NSString *close = closeTime;
+    
+    //Get current time
+    NSDate *nowDate = [[NSDate alloc] init];
+    
+    //Date Formatter
+    NSDateFormatter *formatTime = [[NSDateFormatter alloc]init];
+    [formatTime setDateFormat:@"hh:mm a"];
+    
+    //Open & Close NSString hours to NSDate
+    NSDate *openDate = [formatTime dateFromString:open];
+    NSDate *closeDate = [formatTime dateFromString:close];
+    
+    //Testing
+    NSLog(@"Current Time: %@",[formatTime stringFromDate:nowDate]);
+    NSLog(@"Open: %@",[formatTime stringFromDate:openDate]);
+    NSLog(@"Close: %@",[formatTime stringFromDate:closeDate]);
+    
+    //Check to see if location is open
+    int openMin = [self minutesSinceMidnight:openDate];
+    int closeMin = [self minutesSinceMidnight:closeDate];
+    int nowMin = [self minutesSinceMidnight:nowDate];
+    
+    if (nowMin < openMin && nowMin > closeMin) {
+        NSLog(@"This location is open");
+    } else if (nowMin > openMin && nowMin < closeMin) {
+        NSLog(@"This location is open");
+    } else {
+        NSLog(@"This location is closed");
+    }
+    
+}
+
+-(int) minutesSinceMidnight:(NSDate *)date
+{
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    unsigned unitFlags =  NSCalendarUnitHour | NSCalendarUnitMinute;
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:date];
+    
+    return 60 * [components hour] + [components minute];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // we need to override the default cell height even thought we've set this

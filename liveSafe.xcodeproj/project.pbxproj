@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2C41CD41207C054A00548D94 /* CustomCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C41CD40207C054A00548D94 /* CustomCellViewController.m */; };
+		2C41CD43208445D300548D94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C41CD42208445D300548D94 /* Images.xcassets */; };
 		8E871EFB204DF1D400101CE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E871EFA204DF1D400101CE0 /* AppDelegate.m */; };
 		8E871EFE204DF1D400101CE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E871EFD204DF1D400101CE0 /* ViewController.m */; };
 		8E871F01204DF1D400101CE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E871EFF204DF1D400101CE0 /* Main.storyboard */; };
-		8E871F03204DF1D400101CE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E871F02204DF1D400101CE0 /* Assets.xcassets */; };
 		8E871F06204DF1D400101CE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E871F04204DF1D400101CE0 /* LaunchScreen.storyboard */; };
 		8E871F09204DF1D400101CE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E871F08204DF1D400101CE0 /* main.m */; };
 		8E871F10204DF1FF00101CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E871F0F204DF1FF00101CE0 /* GoogleService-Info.plist */; };
@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		2C41CD3F207C054A00548D94 /* CustomCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCellViewController.h; sourceTree = "<group>"; };
 		2C41CD40207C054A00548D94 /* CustomCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCellViewController.m; sourceTree = "<group>"; };
+		2C41CD42208445D300548D94 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30D5F5F18EE59DC022AFFD7B /* Pods-liveSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liveSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-liveSafe/Pods-liveSafe.release.xcconfig"; sourceTree = "<group>"; };
 		54C4DF1C0FF396F7E5DA3D6D /* Pods-liveSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liveSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-liveSafe/Pods-liveSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		8E871EF6204DF1D400101CE0 /* liveSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liveSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,7 +34,6 @@
 		8E871EFC204DF1D400101CE0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8E871EFD204DF1D400101CE0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8E871F00204DF1D400101CE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8E871F02204DF1D400101CE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E871F05204DF1D400101CE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E871F07204DF1D400101CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E871F08204DF1D400101CE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		8E6935212054CD3A00B208F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8E871F02204DF1D400101CE0 /* Assets.xcassets */,
+				2C41CD42208445D300548D94 /* Images.xcassets */,
 				8E871F04204DF1D400101CE0 /* LaunchScreen.storyboard */,
 				8E871F07204DF1D400101CE0 /* Info.plist */,
 				8E871F08204DF1D400101CE0 /* main.m */,
@@ -217,9 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE97C83207C19A300DE70B0 /* Lato-Light.ttf in Resources */,
+				2C41CD43208445D300548D94 /* Images.xcassets in Resources */,
 				8E871F06204DF1D400101CE0 /* LaunchScreen.storyboard in Resources */,
 				8E871F10204DF1FF00101CE0 /* GoogleService-Info.plist in Resources */,
-				8E871F03204DF1D400101CE0 /* Assets.xcassets in Resources */,
 				8E871F01204DF1D400101CE0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
