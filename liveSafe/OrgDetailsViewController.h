@@ -11,7 +11,8 @@
 
 @interface OrgDetailsViewController : UIViewController
 
-@property (nonatomic) Organization *orgDetails;
-@property (nonatomic) NSArray *orgLibrary;
+@property (strong, nonatomic) Organization *orgDetails;
+@property (strong, nonatomic) NSArray *orgLibrary;
+@property (strong, nonatomic) NSString *test;
 
 @end

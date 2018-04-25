@@ -11,6 +11,7 @@
 
 @interface OrgDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *orgTitle;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
 
@@ -33,6 +34,14 @@
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
     [self performSegueWithIdentifier:@"backSegue" sender:nil];
+}
+- (IBAction)segmentDidChange:(UISegmentedControl *)sender
+{
+    if (sender.selectedSegmentIndex == 1) {
+        UIView *subview2 = [[[NSBundle mainBundle] loadNibNamed:@"subview2Test" owner:self options:nil] objectAtIndex:0];
+        [self.containerView addSubview:subview2];
+
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

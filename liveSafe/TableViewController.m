@@ -141,9 +141,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    OrgDetailsViewController *infoSegue = segue.destinationViewController;
-    infoSegue.orgDetails = self.orgLibrary[self.index];
-    infoSegue.orgLibrary = self.orgLibrary;
+    NSLog(@"segue id: %@", segue.identifier);
+    if ([segue.destinationViewController isKindOfClass:[OrgDetailsViewController class]]) {
+        OrgDetailsViewController *infoSegue = segue.destinationViewController;
+        infoSegue.orgDetails = self.orgLibrary[self.index];
+        infoSegue.orgLibrary = self.orgLibrary;
+        
+    }
 }
 
 - (void)locationOpen: (NSString *)openTime: (NSString *)closeTime {
