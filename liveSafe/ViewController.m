@@ -2,15 +2,15 @@
 //  ViewController.m
 //  liveSafe
 //
-//  Created by Garrett Borbe on 3/5/18.
-//  Copyright © 2018 Garrett Borbe. All rights reserved.
+//  Created by liveSafe on 3/5/18.
+//  Copyright © 2018 liveSafe. All rights reserved.
 //
 
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "OrganizationEditViewController.h"
-#import "Organizations.h"
-#import "CustomCellViewController.h"
+#import "Organization.h"
+#import "TableViewController.h"
 
 @import Firebase;
 
@@ -54,7 +54,7 @@
             NSDictionary *entry = [self.shelterDataCollection objectForKey:rootData];
             
             //Bring this dictionary over to create new object for Organization class
-            Organizations *org = [[Organizations alloc] init];
+            Organization *org = [[Organization alloc] init];
             
             org.name = [NSString stringWithString:[entry objectForKey:@"name"]];
             org.address = [NSString stringWithString:[entry objectForKey:@"address"]];
@@ -81,7 +81,7 @@
     
     if ([segue.identifier isEqualToString:@"tableSegue"]) {
         
-        CustomCellViewController *CVC = segue.destinationViewController;
+        TableViewController *CVC = segue.destinationViewController;
         CVC.orgLibrary = self.orgObjectLibrary;
     }
     

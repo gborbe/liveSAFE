@@ -1,54 +1,81 @@
 //
-//  CustomCellViewController.m
+//  TableViewController.m
 //  liveSafe
 //
-//  Created by eddie on 4/9/18.
-//  Copyright © 2018 Garrett Borbe. All rights reserved.
+//  Created by liveSafe on 4/9/18.
+//  Copyright © 2018 liveSafe. All rights reserved.
 //
 
-#import "CustomCellViewController.h"
-#import "Organizations.h"
+#import "TableViewController.h"
+#import "Organization.h"
+#import "OrgDetailsViewController.h"
 
-@import CoreLocation;
-@import MapKit;
-@interface CustomCellViewController ()
+@interface TableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) NSUInteger index;
 
 @end
 
-@implementation CustomCellViewController
+@implementation TableViewController
 
 
 #pragma mark - Setup
+- (void)setupLocationManager
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager requestWhenInUseAuthorization];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = 10.0;
+    
+    [self.locationManager startUpdatingLocation];
+
+}
 - (void)setupMap
 {
-    NSString *address; // GRAB FROM DATA OBJECT
     
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:address
-                 completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-                     
-                     if (error) {
-                         NSLog(@"ERROR! - %@", error.localizedDescription);
-                     }
-                     
-                     if (placemarks[0]) {
+    // center map on user's current location and add pin
+    self.mapView.showsUserLocation = YES;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(self.locationManager.location.coordinate, 50000, 50000);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    [self.mapView setRegion:adjustedRegion animated:YES];
+    self.mapView.showsUserLocation = YES;
+    
+    for (Organization *org in self.orgLibrary) {
+        
+        NSString *address = org.address;
+        
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        
+        [geocoder geocodeAddressString:address
+                     completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
                          
-                         CLPlacemark *placemark = placemarks[0];
-                         CLLocationCoordinate2D coordinate = placemark.location.coordinate;
-                         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-                         annotation.coordinate = coordinate;
-                         annotation.title = @"GRAB TITLE FROM DATA OBJECT";
+                         if (error) {
+                             NSLog(@"ERROR! - %@", error.localizedDescription);
+                         }
                          
-                         [self.mapView addAnnotation:annotation];
-                         self.mapView.centerCoordinate = coordinate;
+                         if (placemarks[0]) {
+                             
+                             CLPlacemark *placemark = placemarks[0];
+                             CLLocationCoordinate2D coordinate = placemark.location.coordinate;
+                             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                             annotation.coordinate = coordinate;
+                             annotation.title = org.name;
+                             
+                             [self.mapView addAnnotation:annotation];
+                             
+                             
+                         }
                          
-                     }
-                     
-                 }];
+                     }];
+        
+        
+    }
+    
     
     
 }
@@ -64,9 +91,16 @@
     // produce a warning
     self.tableView.delegate = self;
 }
-
+#pragma mark - location manager delegate methods
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    [self setupMap];
+    for (CLLocation *location in locations) {
+        NSLog(@"%@", location);
+    }
+}
 #pragma mark - Table View Data Source and Delegate Methods
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Our table only has one section...
@@ -78,25 +112,38 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // grab the drone for this row
-    Organizations *selectedOrg = self.orgLibrary[indexPath.row];
+    // grab the location for this row
+    Organization *selectedOrg = self.orgLibrary[indexPath.row];
     
     // get our custom cell
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"custom"];
     
-    // we assigned each component of the custom cell we created
-    // in interface builder a unique tab number - this is how
-    // we get references to those components
+    // components of the cell
     UILabel *OrgName = (UILabel *)[cell viewWithTag:1];
     UILabel *hours = (UILabel *)[cell viewWithTag:3];
     
     // populate the cell
     OrgName.text = selectedOrg.name;
-    hours.text = @"%@ - %@",selectedOrg.openHour, selectedOrg.closeHour;
+    NSString *hour1 = selectedOrg.openHour;
+    NSString *hour2 = [hour1 stringByAppendingString:@" - "];
+    NSString *hourString = [hour2 stringByAppendingString:selectedOrg.closeHour];
+    hours.text = hourString;
     [self locationOpen: selectedOrg.openHour: selectedOrg.closeHour];
     
-    // return our cell
     return cell;
+}
+
+    // Tap on table Row
+- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
+    self.index = indexPath.row;
+    [self performSegueWithIdentifier:@"orgSelectedSegue" sender:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    OrgDetailsViewController *infoSegue = segue.destinationViewController;
+    infoSegue.orgDetails = self.orgLibrary[self.index];
+    infoSegue.orgLibrary = self.orgLibrary;
 }
 
 - (void)locationOpen: (NSString *)openTime: (NSString *)closeTime {
@@ -156,6 +203,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setup];
+    [self setupLocationManager];
 }
 
 

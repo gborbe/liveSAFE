@@ -1,14 +1,14 @@
 //
-//  Organizations.h
+//  Organization.h
 //  liveSafe
 //
-//  Created by Garrett Borbe on 4/6/18.
-//  Copyright © 2018 Garrett Borbe. All rights reserved.
+//  Created by liveSafe on 4/6/18.
+//  Copyright © 2018 liveSafe. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface Organizations : UIViewController
+@interface Organization : UIViewController
 
 //Attributes of each object/organization in our array
 @property (nonatomic) NSString *name;
@@ -28,5 +28,7 @@
 @property (nonatomic) BOOL shelter;
 @property (nonatomic) BOOL meals;
 @property (nonatomic) BOOL restStop;
+
+- (BOOL)openNow;
 
 @end

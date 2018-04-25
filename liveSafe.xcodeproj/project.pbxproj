@@ -7,25 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C41CD41207C054A00548D94 /* CustomCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C41CD40207C054A00548D94 /* CustomCellViewController.m */; };
+		2C41CD41207C054A00548D94 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C41CD40207C054A00548D94 /* TableViewController.m */; };
 		2C41CD43208445D300548D94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C41CD42208445D300548D94 /* Images.xcassets */; };
+		2C41CD452087D6AA00548D94 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C41CD442087D6AA00548D94 /* MapKit.framework */; };
 		8E871EFB204DF1D400101CE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E871EFA204DF1D400101CE0 /* AppDelegate.m */; };
 		8E871EFE204DF1D400101CE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E871EFD204DF1D400101CE0 /* ViewController.m */; };
 		8E871F01204DF1D400101CE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E871EFF204DF1D400101CE0 /* Main.storyboard */; };
 		8E871F06204DF1D400101CE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E871F04204DF1D400101CE0 /* LaunchScreen.storyboard */; };
 		8E871F09204DF1D400101CE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E871F08204DF1D400101CE0 /* main.m */; };
 		8E871F10204DF1FF00101CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E871F0F204DF1FF00101CE0 /* GoogleService-Info.plist */; };
+		8EA5A17B208AC1400074A10A /* OrgDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5A17A208AC1400074A10A /* OrgDetailsViewController.m */; };
+		8EA5A185208AC4900074A10A /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C7C207C192F00DE70B0 /* Lato-Black.ttf */; };
+		8EA5A186208AC4900074A10A /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C79207C192E00DE70B0 /* Lato-BlackItalic.ttf */; };
+		8EA5A187208AC4900074A10A /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C7E207C193000DE70B0 /* Lato-Bold.ttf */; };
+		8EA5A188208AC4900074A10A /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C7A207C192E00DE70B0 /* Lato-BoldItalic.ttf */; };
+		8EA5A189208AC4900074A10A /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C81207C193200DE70B0 /* Lato-Hairline.ttf */; };
+		8EA5A18A208AC4900074A10A /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C78207C192D00DE70B0 /* Lato-HairlineItalic.ttf */; };
+		8EA5A18B208AC4900074A10A /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C7B207C192F00DE70B0 /* Lato-Italic.ttf */; };
+		8EA5A18C208AC4900074A10A /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C7F207C193100DE70B0 /* Lato-Light.ttf */; };
+		8EA5A18D208AC4900074A10A /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C80207C193100DE70B0 /* Lato-LightItalic.ttf */; };
+		8EA5A18E208AC4900074A10A /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C7D207C193000DE70B0 /* Lato-Regular.ttf */; };
 		8ED081312072B53A00F0A84F /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0812F2072B53A00F0A84F /* SignInViewController.m */; };
 		8ED081372072B73A00F0A84F /* OrgEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED081362072B73900F0A84F /* OrgEditViewController.m */; };
-		8ED0813A20780D5500F0A84F /* Organizations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0813920780D5500F0A84F /* Organizations.m */; };
-		8EE97C83207C19A300DE70B0 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C7F207C193100DE70B0 /* Lato-Light.ttf */; };
+		8ED0813A20780D5500F0A84F /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0813920780D5500F0A84F /* Organization.m */; };
 		E48D2BFB7AA0CF7F6EB1546A /* libPods-liveSafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC106FDA7B87F0381DB6F79A /* libPods-liveSafe.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C41CD3F207C054A00548D94 /* CustomCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCellViewController.h; sourceTree = "<group>"; };
-		2C41CD40207C054A00548D94 /* CustomCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCellViewController.m; sourceTree = "<group>"; };
+		2C41CD3F207C054A00548D94 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		2C41CD40207C054A00548D94 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		2C41CD42208445D300548D94 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2C41CD442087D6AA00548D94 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		30D5F5F18EE59DC022AFFD7B /* Pods-liveSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liveSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-liveSafe/Pods-liveSafe.release.xcconfig"; sourceTree = "<group>"; };
 		54C4DF1C0FF396F7E5DA3D6D /* Pods-liveSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liveSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-liveSafe/Pods-liveSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		8E871EF6204DF1D400101CE0 /* liveSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liveSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,12 +50,14 @@
 		8E871F07204DF1D400101CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E871F08204DF1D400101CE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8E871F0F204DF1FF00101CE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8EA5A179208AC1400074A10A /* OrgDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrgDetailsViewController.h; sourceTree = "<group>"; };
+		8EA5A17A208AC1400074A10A /* OrgDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrgDetailsViewController.m; sourceTree = "<group>"; };
 		8ED0812F2072B53A00F0A84F /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		8ED081302072B53A00F0A84F /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		8ED081352072B73900F0A84F /* OrgEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgEditViewController.h; sourceTree = "<group>"; };
 		8ED081362072B73900F0A84F /* OrgEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgEditViewController.m; sourceTree = "<group>"; };
-		8ED0813820780D5500F0A84F /* Organizations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Organizations.h; sourceTree = "<group>"; };
-		8ED0813920780D5500F0A84F /* Organizations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Organizations.m; sourceTree = "<group>"; };
+		8ED0813820780D5500F0A84F /* Organization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Organization.h; sourceTree = "<group>"; };
+		8ED0813920780D5500F0A84F /* Organization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
 		8EE97C78207C192D00DE70B0 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
 		8EE97C79207C192E00DE70B0 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		8EE97C7A207C192E00DE70B0 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -62,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C41CD452087D6AA00548D94 /* MapKit.framework in Frameworks */,
 				E48D2BFB7AA0CF7F6EB1546A /* libPods-liveSafe.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +96,7 @@
 		764075B7A2418AEE7E144344 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C41CD442087D6AA00548D94 /* MapKit.framework */,
 				DC106FDA7B87F0381DB6F79A /* libPods-liveSafe.a */,
 			);
 			name = Frameworks;
@@ -89,6 +105,8 @@
 		8E6935212054CD3A00B208F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E871EF9204DF1D400101CE0 /* AppDelegate.h */,
+				8E871EFA204DF1D400101CE0 /* AppDelegate.m */,
 				2C41CD42208445D300548D94 /* Images.xcassets */,
 				8E871F04204DF1D400101CE0 /* LaunchScreen.storyboard */,
 				8E871F07204DF1D400101CE0 /* Info.plist */,
@@ -120,14 +138,14 @@
 			isa = PBXGroup;
 			children = (
 				8E871EFF204DF1D400101CE0 /* Main.storyboard */,
-				8E871EF9204DF1D400101CE0 /* AppDelegate.h */,
-				8E871EFA204DF1D400101CE0 /* AppDelegate.m */,
 				8E871EFC204DF1D400101CE0 /* ViewController.h */,
 				8E871EFD204DF1D400101CE0 /* ViewController.m */,
-				8ED0813820780D5500F0A84F /* Organizations.h */,
-				8ED0813920780D5500F0A84F /* Organizations.m */,
-				2C41CD3F207C054A00548D94 /* CustomCellViewController.h */,
-				2C41CD40207C054A00548D94 /* CustomCellViewController.m */,
+				8ED0813820780D5500F0A84F /* Organization.h */,
+				8ED0813920780D5500F0A84F /* Organization.m */,
+				2C41CD3F207C054A00548D94 /* TableViewController.h */,
+				2C41CD40207C054A00548D94 /* TableViewController.m */,
+				8EA5A179208AC1400074A10A /* OrgDetailsViewController.h */,
+				8EA5A17A208AC1400074A10A /* OrgDetailsViewController.m */,
 				8ED081302072B53A00F0A84F /* SignInViewController.h */,
 				8ED0812F2072B53A00F0A84F /* SignInViewController.m */,
 				8ED081352072B73900F0A84F /* OrgEditViewController.h */,
@@ -216,11 +234,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EE97C83207C19A300DE70B0 /* Lato-Light.ttf in Resources */,
+				8EA5A187208AC4900074A10A /* Lato-Bold.ttf in Resources */,
 				2C41CD43208445D300548D94 /* Images.xcassets in Resources */,
+				8EA5A18A208AC4900074A10A /* Lato-HairlineItalic.ttf in Resources */,
+				8EA5A18C208AC4900074A10A /* Lato-Light.ttf in Resources */,
 				8E871F06204DF1D400101CE0 /* LaunchScreen.storyboard in Resources */,
+				8EA5A18B208AC4900074A10A /* Lato-Italic.ttf in Resources */,
+				8EA5A188208AC4900074A10A /* Lato-BoldItalic.ttf in Resources */,
+				8EA5A186208AC4900074A10A /* Lato-BlackItalic.ttf in Resources */,
+				8EA5A189208AC4900074A10A /* Lato-Hairline.ttf in Resources */,
 				8E871F10204DF1FF00101CE0 /* GoogleService-Info.plist in Resources */,
+				8EA5A185208AC4900074A10A /* Lato-Black.ttf in Resources */,
+				8EA5A18E208AC4900074A10A /* Lato-Regular.ttf in Resources */,
 				8E871F01204DF1D400101CE0 /* Main.storyboard in Resources */,
+				8EA5A18D208AC4900074A10A /* Lato-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,10 +320,11 @@
 			files = (
 				8ED081312072B53A00F0A84F /* SignInViewController.m in Sources */,
 				8E871EFE204DF1D400101CE0 /* ViewController.m in Sources */,
-				2C41CD41207C054A00548D94 /* CustomCellViewController.m in Sources */,
+				8EA5A17B208AC1400074A10A /* OrgDetailsViewController.m in Sources */,
+				2C41CD41207C054A00548D94 /* TableViewController.m in Sources */,
 				8E871F09204DF1D400101CE0 /* main.m in Sources */,
 				8ED081372072B73A00F0A84F /* OrgEditViewController.m in Sources */,
-				8ED0813A20780D5500F0A84F /* Organizations.m in Sources */,
+				8ED0813A20780D5500F0A84F /* Organization.m in Sources */,
 				8E871EFB204DF1D400101CE0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

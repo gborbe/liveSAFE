@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="20180415_193357" translatesAutoresizingMaskIntoConstraints="NO" id="BdX-wv-zcF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launch pic bw" translatesAutoresizingMaskIntoConstraints="NO" id="BdX-wv-zcF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -44,7 +44,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="20180415_193357" width="304" height="462"/>
+        <image name="launch pic bw" width="304" height="462"/>
         <image name="lifesafe logo file-1" width="683" height="384"/>
     </resources>
 </document>

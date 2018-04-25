@@ -1,18 +1,18 @@
 //
-//  Organizations.m
+//  Organization.m
 //  liveSafe
 //
-//  Created by Garrett Borbe on 4/6/18.
-//  Copyright © 2018 Garrett Borbe. All rights reserved.
+//  Created by liveSafe on 4/6/18.
+//  Copyright © 2018 liveSafe. All rights reserved.
 //
 
-#import "Organizations.h"
+#import "Organization.h"
 
-@interface Organizations ()
+@interface Organization ()
 
 @end
 
-@implementation Organizations
+@implementation Organization
 
 #pragma mark - Inherited Methods
 - (void)viewDidLoad {
