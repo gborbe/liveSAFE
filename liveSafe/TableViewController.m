@@ -127,9 +127,7 @@
     NSString *hour1 = selectedOrg.openHour;
     NSString *hour2 = [hour1 stringByAppendingString:@" - "];
     NSString *hourString = [hour2 stringByAppendingString:selectedOrg.closeHour];
-    hours.text = hourString;
-    [self locationOpen: selectedOrg.openHour: selectedOrg.closeHour];
-    
+    hours.text = hourString;    
     return cell;
 }
 
@@ -144,52 +142,6 @@
     OrgDetailsViewController *infoSegue = segue.destinationViewController;
     infoSegue.orgDetails = self.orgLibrary[self.index];
     infoSegue.orgLibrary = self.orgLibrary;
-}
-
-- (void)locationOpen: (NSString *)openTime: (NSString *)closeTime {
-    //Get hours from Database in this format
-    NSString *open = openTime;
-    NSString *close = closeTime;
-    
-    //Get current time
-    NSDate *nowDate = [[NSDate alloc] init];
-    
-    //Date Formatter
-    NSDateFormatter *formatTime = [[NSDateFormatter alloc]init];
-    [formatTime setDateFormat:@"hh:mm a"];
-    
-    //Open & Close NSString hours to NSDate
-    NSDate *openDate = [formatTime dateFromString:open];
-    NSDate *closeDate = [formatTime dateFromString:close];
-    
-    //Testing
-    NSLog(@"Current Time: %@",[formatTime stringFromDate:nowDate]);
-    NSLog(@"Open: %@",[formatTime stringFromDate:openDate]);
-    NSLog(@"Close: %@",[formatTime stringFromDate:closeDate]);
-    
-    //Check to see if location is open
-    int openMin = [self minutesSinceMidnight:openDate];
-    int closeMin = [self minutesSinceMidnight:closeDate];
-    int nowMin = [self minutesSinceMidnight:nowDate];
-    
-    if (nowMin < openMin && nowMin > closeMin) {
-        NSLog(@"This location is open");
-    } else if (nowMin > openMin && nowMin < closeMin) {
-        NSLog(@"This location is open");
-    } else {
-        NSLog(@"This location is closed");
-    }
-    
-}
-
--(int) minutesSinceMidnight:(NSDate *)date
-{
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    unsigned unitFlags =  NSCalendarUnitHour | NSCalendarUnitMinute;
-    NSDateComponents *components = [gregorian components:unitFlags fromDate:date];
-    
-    return 60 * [components hour] + [components minute];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

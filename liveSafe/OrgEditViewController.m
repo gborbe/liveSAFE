@@ -5,13 +5,12 @@
 //  Created by liveSafe on 4/2/18.
 //
 
-// EDDIE MAKES SOME CHANGES
-
 
 #import "OrgEditViewController.h"
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Organization.h"
 @import Firebase;
 @import FirebaseAuthUI;
 @import FirebaseGoogleAuthUI;
@@ -23,23 +22,27 @@
 @property (strong, nonatomic) NSMutableDictionary *dictToPush;
 @property (strong, nonatomic) NSString *valueToPush;
 @property (nonatomic) NSString *uid;
+@property (nonatomic) Organization *userOrg;
 
 @end
 
 @implementation OrgEditViewController
 
 
--(void)setup {
+-(void)setupUser {
     self.ref = [[FIRDatabase database] reference];
     FIRAuth *auth = [FIRAuth auth];
-    self.welcomeTitle.text = [NSString stringWithFormat:@"Welcome, %@", auth.currentUser.displayName];
     self.uid = auth.currentUser.uid;
+    [self getUserInfo];
     [self getDatabaseNodeToChange];
-    
+    [self setupUserScreen];
 }
 
-- (void)getDatabaseNodeToChange
-{
+-(void)setupUserScreen {
+    self.welcomeTitle.text = [NSString stringWithFormat:@"Welcome, %@", self.userOrg.name];
+}
+
+- (void)getDatabaseNodeToChange{
     
     NSString *pathEndpoint = self.uid;
     
@@ -49,19 +52,50 @@
         self.dictToPush = [[NSMutableDictionary alloc] initWithDictionary:oldDict];
         
     }];
+}
+
+- (void)getUserInfo
+{
+    self.userOrg = [[Organization alloc] init];
+    NSString *pathEndpoint = self.uid;
     
-    
+    FIRDatabaseReference *ref = [[_ref child:@"Organizations"] child:pathEndpoint];
+    [ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        NSDictionary *collection = snapshot.value;
+        self.userOrg.name = [NSString stringWithString:[collection objectForKey:@"name"]];
+        self.userOrg.address = [NSString stringWithString:[collection objectForKey:@"address"]];
+        self.userOrg.phone = [NSString stringWithString:[collection objectForKey:@"phone"]];
+        self.userOrg.website = [NSString stringWithString:[collection objectForKey:@"website"]];
+        self.userOrg.space = [NSString stringWithString:[collection objectForKey:@"space"]];
+        self.userOrg.openHour = [NSString stringWithString:[collection objectForKey:@"openTime"]];
+        self.userOrg.closeHour = [NSString stringWithString:[collection objectForKey:@"closeTime"]];
+        self.userOrg.servicesDescription = [NSString stringWithString:[collection objectForKey:@"servicesDescription"]];
+        self.userOrg.requirements = [NSString stringWithString:[collection objectForKey:@"requirements"]];
+        self.userOrg.imgURL = [NSString stringWithString:[collection objectForKey:@"img"]];
+    }];
 }
 
 - (void)pushNewValueToDatabase
 {
     // Property to be editted
-    NSString *newKey = @"space";
+        // NSString *newKey = @"space";
+    NSString *logEntry = @"";
     
     // Extract text value from field and change local dictionary in order to be updated
-    self.dictToPush[newKey] = self.hoursTextField.text;
+    self.dictToPush[@"space"] = self.hoursTextField.text;
     NSDictionary *childUpdates = @{[@"/Organizations/" stringByAppendingString:self.uid]: self.dictToPush};
     [self.ref updateChildValues:childUpdates];
+    NSString *spaceEntry = [@"Space: " stringByAppendingString:self.hoursTextField.text];
+    logEntry = [logEntry stringByAppendingString:spaceEntry];
+    
+    //Add to log/history
+    NSDate *now = [[NSDate alloc] init];
+    NSDateFormatter *formatTime = [[NSDateFormatter alloc]init];
+    [formatTime setDateFormat:@"MM|dd|yy hh:mm:ss a"];
+    NSString *loggedTime = [formatTime stringFromDate:now];
+    NSString *logLocation = [@"/Data/" stringByAppendingString:self.uid];
+    NSDictionary *logUpdate = @{[logLocation stringByAppendingString:loggedTime]: logEntry};
+    [[[[_ref child:@"Data"] child:self.uid] child:loggedTime] setValue:logEntry];
 }
 
 - (IBAction)submitButtonPressed:(UIButton *)sender {
@@ -91,7 +125,7 @@
 #pragma mark - Inherited Methods
 
 - (void)viewDidLoad {
-    [self setup];
+    [self setupUser];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
