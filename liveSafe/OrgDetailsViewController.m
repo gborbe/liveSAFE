@@ -8,14 +8,21 @@
 
 #import "OrgDetailsViewController.h"
 #import "TableViewController.h"
+#import "ServicesView.h"
+#import "GeneralInfoView.h"
 
 @interface OrgDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *orgTitle;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *genericContainerView;
 
 @end
 
 @implementation OrgDetailsViewController
+
+- (void)setOrgLibrary:(NSArray *)orgLibrary
+{
+    _orgLibrary = orgLibrary;
+}
 
 - (void)viewDidLoad {
     [self setup];
@@ -37,9 +44,23 @@
 }
 - (IBAction)segmentDidChange:(UISegmentedControl *)sender
 {
+    
+    
     if (sender.selectedSegmentIndex == 1) {
-        UIView *subview2 = [[[NSBundle mainBundle] loadNibNamed:@"subview2Test" owner:self options:nil] objectAtIndex:0];
-        [self.containerView addSubview:subview2];
+        ServicesView *servicesView = [[[NSBundle mainBundle] loadNibNamed:@"ServicesView" owner:self options:nil] objectAtIndex:0];
+        
+        servicesView.testLabel.text = @"This is a test string";
+        
+        [self.genericContainerView addSubview:servicesView];
+
+    } else if (sender.selectedSegmentIndex == 2) {
+        
+        \
+        GeneralInfoView *generalInfoView = [[[NSBundle mainBundle] loadNibNamed:@"GeneralInfoView" owner:self options:nil] objectAtIndex:0];
+        
+        generalInfoView.testLabel.text = @"General Info View";
+        
+        [self.genericContainerView addSubview:generalInfoView];
 
     }
 }

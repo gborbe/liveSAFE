@@ -10,7 +10,11 @@
 		2C41CD41207C054A00548D94 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C41CD40207C054A00548D94 /* TableViewController.m */; };
 		2C41CD43208445D300548D94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C41CD42208445D300548D94 /* Images.xcassets */; };
 		2C41CD452087D6AA00548D94 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C41CD442087D6AA00548D94 /* MapKit.framework */; };
-		2C68185C2091278500D27E9F /* subview2Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68185B2091278500D27E9F /* subview2Test.xib */; };
+		2C681887209131C200D27E9F /* RequirementsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C681886209131C200D27E9F /* RequirementsView.m */; };
+		2C68188A209131F800D27E9F /* ServicesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C681889209131F800D27E9F /* ServicesView.m */; };
+		2C68188C2091321600D27E9F /* ServicesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68188B2091321600D27E9F /* ServicesView.xib */; };
+		2C68188F2091334E00D27E9F /* GeneralInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C68188E2091334E00D27E9F /* GeneralInfoView.m */; };
+		2C6818912091335F00D27E9F /* GeneralInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6818902091335F00D27E9F /* GeneralInfoView.xib */; };
 		8E871EFB204DF1D400101CE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E871EFA204DF1D400101CE0 /* AppDelegate.m */; };
 		8E871EFE204DF1D400101CE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E871EFD204DF1D400101CE0 /* ViewController.m */; };
 		8E871F01204DF1D400101CE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E871EFF204DF1D400101CE0 /* Main.storyboard */; };
@@ -39,7 +43,14 @@
 		2C41CD40207C054A00548D94 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		2C41CD42208445D300548D94 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2C41CD442087D6AA00548D94 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		2C68185B2091278500D27E9F /* subview2Test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = subview2Test.xib; sourceTree = "<group>"; };
+		2C681885209131C200D27E9F /* RequirementsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequirementsView.h; sourceTree = "<group>"; };
+		2C681886209131C200D27E9F /* RequirementsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequirementsView.m; sourceTree = "<group>"; };
+		2C681888209131F800D27E9F /* ServicesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServicesView.h; sourceTree = "<group>"; };
+		2C681889209131F800D27E9F /* ServicesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServicesView.m; sourceTree = "<group>"; };
+		2C68188B2091321600D27E9F /* ServicesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesView.xib; sourceTree = "<group>"; };
+		2C68188D2091334E00D27E9F /* GeneralInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralInfoView.h; sourceTree = "<group>"; };
+		2C68188E2091334E00D27E9F /* GeneralInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralInfoView.m; sourceTree = "<group>"; };
+		2C6818902091335F00D27E9F /* GeneralInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralInfoView.xib; sourceTree = "<group>"; };
 		30D5F5F18EE59DC022AFFD7B /* Pods-liveSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liveSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-liveSafe/Pods-liveSafe.release.xcconfig"; sourceTree = "<group>"; };
 		54C4DF1C0FF396F7E5DA3D6D /* Pods-liveSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liveSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-liveSafe/Pods-liveSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		8E871EF6204DF1D400101CE0 /* liveSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liveSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +151,14 @@
 			isa = PBXGroup;
 			children = (
 				8E871EFF204DF1D400101CE0 /* Main.storyboard */,
-				2C68185B2091278500D27E9F /* subview2Test.xib */,
+				2C681888209131F800D27E9F /* ServicesView.h */,
+				2C681889209131F800D27E9F /* ServicesView.m */,
+				2C68188B2091321600D27E9F /* ServicesView.xib */,
+				2C681885209131C200D27E9F /* RequirementsView.h */,
+				2C681886209131C200D27E9F /* RequirementsView.m */,
+				2C68188D2091334E00D27E9F /* GeneralInfoView.h */,
+				2C68188E2091334E00D27E9F /* GeneralInfoView.m */,
+				2C6818902091335F00D27E9F /* GeneralInfoView.xib */,
 				8E871EFC204DF1D400101CE0 /* ViewController.h */,
 				8E871EFD204DF1D400101CE0 /* ViewController.m */,
 				8ED0813820780D5500F0A84F /* Organization.h */,
@@ -237,8 +255,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C68188C2091321600D27E9F /* ServicesView.xib in Resources */,
 				8EA5A187208AC4900074A10A /* Lato-Bold.ttf in Resources */,
-				2C68185C2091278500D27E9F /* subview2Test.xib in Resources */,
 				2C41CD43208445D300548D94 /* Images.xcassets in Resources */,
 				8EA5A18A208AC4900074A10A /* Lato-HairlineItalic.ttf in Resources */,
 				8EA5A18C208AC4900074A10A /* Lato-Light.ttf in Resources */,
@@ -246,6 +264,7 @@
 				8EA5A18B208AC4900074A10A /* Lato-Italic.ttf in Resources */,
 				8EA5A188208AC4900074A10A /* Lato-BoldItalic.ttf in Resources */,
 				8EA5A186208AC4900074A10A /* Lato-BlackItalic.ttf in Resources */,
+				2C6818912091335F00D27E9F /* GeneralInfoView.xib in Resources */,
 				8EA5A189208AC4900074A10A /* Lato-Hairline.ttf in Resources */,
 				8E871F10204DF1FF00101CE0 /* GoogleService-Info.plist in Resources */,
 				8EA5A185208AC4900074A10A /* Lato-Black.ttf in Resources */,
@@ -322,12 +341,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C68188A209131F800D27E9F /* ServicesView.m in Sources */,
 				8ED081312072B53A00F0A84F /* SignInViewController.m in Sources */,
 				8E871EFE204DF1D400101CE0 /* ViewController.m in Sources */,
 				8EA5A17B208AC1400074A10A /* OrgDetailsViewController.m in Sources */,
 				2C41CD41207C054A00548D94 /* TableViewController.m in Sources */,
+				2C681887209131C200D27E9F /* RequirementsView.m in Sources */,
 				8E871F09204DF1D400101CE0 /* main.m in Sources */,
 				8ED081372072B73A00F0A84F /* OrgEditViewController.m in Sources */,
+				2C68188F2091334E00D27E9F /* GeneralInfoView.m in Sources */,
 				8ED0813A20780D5500F0A84F /* Organization.m in Sources */,
 				8E871EFB204DF1D400101CE0 /* AppDelegate.m in Sources */,
 			);

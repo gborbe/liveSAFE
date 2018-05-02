@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "liveSafe/TableViewController.m"
-            timestampString = "546385182.928229"
+            filePath = "liveSafe/OrgDetailsViewController.m"
+            timestampString = "546978473.787555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-segmentDidChange:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "liveSafe/TableViewController.m"
-            timestampString = "546385182.928612"
+            filePath = "liveSafe/OrgDetailsViewController.m"
+            timestampString = "546978473.787815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-segmentDidChange:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
