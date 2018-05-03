@@ -34,10 +34,4 @@
 - (IBAction)backButtonPressed:(UIButton *)sender {
     [self performSegueWithIdentifier:@"backSegue" sender:nil];
 }
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    TableViewController *infoSegue = segue.destinationViewController;
-    infoSegue.orgLibrary = self.orgLibrary;
-}
 @end

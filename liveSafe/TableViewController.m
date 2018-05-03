@@ -17,6 +17,10 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) NSUInteger index;
 
+@property (strong, nonatomic) NSArray *orgsToShow;
+
+
+
 @end
 
 @implementation TableViewController
@@ -45,7 +49,7 @@
     [self.mapView setRegion:adjustedRegion animated:YES];
     self.mapView.showsUserLocation = YES;
     
-    for (Organization *org in self.orgLibrary) {
+    for (Organization *org in self.orgsToShow) {
         
         NSString *address = org.address;
         
@@ -68,16 +72,9 @@
                              
                              [self.mapView addAnnotation:annotation];
                              
-                             
                          }
-                         
                      }];
-        
-        
     }
-    
-    
-    
 }
 - (void)setup
 {
@@ -90,6 +87,18 @@
     // CustomCellViewController.h for this to not
     // produce a warning
     self.tableView.delegate = self;
+}
+- (void)updateMapAndTable
+{
+    if ([self.restorationIdentifier isEqualToString:@"Shelters"]) {
+        self.orgsToShow = self.shelterOrgs;
+    } else if ([self.restorationIdentifier isEqualToString:@"Rests"]) {
+        self.orgsToShow = self.restOrgs;
+    } else if ([self.restorationIdentifier isEqualToString:@"Food"]) {
+        self.orgsToShow = self.mealOrgs;
+    }
+    
+    [self.tableView reloadData];
 }
 #pragma mark - location manager delegate methods
 - (void)locationManager:(CLLocationManager *)manager
@@ -105,7 +114,7 @@
 {
     // Our table only has one section...
     if (section == 0) {
-        return self.orgLibrary.count;
+        return self.orgsToShow.count;
     } else {
         return 0;
     }
@@ -113,7 +122,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // grab the location for this row
-    Organization *selectedOrg = self.orgLibrary[indexPath.row];
+    Organization *selectedOrg = self.orgsToShow[indexPath.row];
     
     // get our custom cell
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"custom"];
@@ -140,8 +149,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     OrgDetailsViewController *infoSegue = segue.destinationViewController;
-    infoSegue.orgDetails = self.orgLibrary[self.index];
-    infoSegue.orgLibrary = self.orgLibrary;
+    infoSegue.orgDetails = self.orgsToShow[self.index];
+    infoSegue.orgLibrary = self.orgsToShow;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -156,6 +165,11 @@
     // Do any additional setup after loading the view.
     [self setup];
     [self setupLocationManager];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"view with restorationID %@ will appear", self.restorationIdentifier);
+    [self updateMapAndTable];
 }
 
 

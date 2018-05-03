@@ -14,6 +14,8 @@
 @interface TableViewController : UIViewController
     <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate>
 
-@property (nonatomic) NSArray *orgLibrary;
+@property (strong, nonatomic) NSArray *mealOrgs;
+@property (strong, nonatomic) NSArray *restOrgs;
+@property (strong, nonatomic) NSArray *shelterOrgs;
 
 @end

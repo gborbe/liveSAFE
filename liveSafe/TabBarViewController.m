@@ -1,54 +1,51 @@
 //
-//  ViewController.m
+//  TabBarViewController.m
 //  liveSafe
 //
-//  Created by liveSafe on 3/5/18.
-//  Copyright © 2018 liveSafe. All rights reserved.
+//  Created by Garrett Borbe on 5/2/18.
+//  Copyright © 2018 Garrett Borbe. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TabBarViewController.h"
 #import "AppDelegate.h"
 #import "OrganizationEditViewController.h"
 #import "Organization.h"
 #import "TableViewController.h"
 
-@import Firebase;
-
-@interface ViewController ()
+@interface TabBarViewController ()
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) NSDictionary *shelterDataCollection;
 @property (strong, nonatomic) NSMutableArray *orgObjectLibrary;
 @property (nonatomic) BOOL loggedIn;
 @property (strong, nonatomic) FUIAuth *authUI;
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
 
-@interface ViewController ()
+@implementation TabBarViewController
 
-@end
-
-@implementation ViewController
-
-- (void)viewDidLoad {
+- (void)setup
+{
+    if (!self.loggedIn) {
+        [self authUser];
+    }
+    
     self.ref = [[FIRDatabase database] reference];
     self.orgObjectLibrary = [[NSMutableArray alloc] init];
     [self collectData];
-    [self setup];
-    [super viewDidLoad];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Database Compiling
-
 - (void)collectData{
     [[self.ref child:@"Organizations"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         self.shelterDataCollection = snapshot.value;
+        
+        NSMutableArray *restOrgs = [[NSMutableArray alloc] init];
+        NSMutableArray *shelterOrgs = [[NSMutableArray alloc] init];
+        NSMutableArray *mealOrgs = [[NSMutableArray alloc] init];
+        
         for (NSString* rootData in self.shelterDataCollection) {
             
             //access dictionary of a specific location
@@ -67,9 +64,35 @@
             org.servicesDescription = [NSString stringWithString:[entry objectForKey:@"servicesDescription"]];
             org.requirements = [NSString stringWithString:[entry objectForKey:@"requirements"]];
             org.imgURL = [NSString stringWithString:[entry objectForKey:@"img"]];
+            org.meals = [[entry objectForKey:@"hasMeals"] boolValue];
+            org.shelter = [[entry objectForKey:@"hasShelter"] boolValue];
+            org.restStop = [[entry objectForKey:@"hasRest"] boolValue];
             
+            if (org.meals) {
+                [mealOrgs addObject:org];
+            }
+            
+            if (org.shelter) {
+                [shelterOrgs addObject:org];
+            }
+            
+            if (org.restStop) {
+                [shelterOrgs addObject:org];
+            }
             [self.orgObjectLibrary addObject:org];
-
+            
+        }
+        
+        for (UIViewController *childVC in self.childViewControllers) {
+            if ([childVC isKindOfClass:[UINavigationController class]]) {
+                UINavigationController *navigationVC = (UINavigationController *)childVC;
+                if ([navigationVC.topViewController isKindOfClass:[TableViewController class]]) {
+                    TableViewController *tableVC = (TableViewController *)navigationVC.topViewController;
+                    tableVC.mealOrgs = mealOrgs;
+                    tableVC.shelterOrgs = shelterOrgs;
+                    tableVC.restOrgs = restOrgs;
+                }
+            }
         }
         
     } withCancelBlock:^(NSError * _Nonnull error) {
@@ -77,25 +100,15 @@
     }];
     
 }
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    
-//    if ([segue.identifier isEqualToString:@"tableSegue"]) {
-//        
-//        TableViewController *CVC = segue.destinationViewController;
-//        CVC.orgLibrary = self.orgObjectLibrary;
-//    }
-//    
-//}
 
 #pragma mark - Firebase Authentication
 
 - (void)buttonChange {
-//    if (FIRAuth.auth.currentUser != nil) {
-//        <#statements#>;
-//    } else {
-//        <#statements#>;
-//    }
+    //    if (FIRAuth.auth.currentUser != nil) {
+    //        <#statements#>;
+    //    } else {
+    //        <#statements#>;
+    //    }
 }
 
 - (BOOL)loggedIn
@@ -125,8 +138,8 @@
 }
 
 - (BOOL)application:(UIApplication *)app
-            openURL:(NSURL *)url
-            options:(NSDictionary *)options {
+openURL:(NSURL *)url
+options:(NSDictionary *)options {
     NSString *sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
     return [[FUIAuth defaultAuthUI] handleOpenURL:url sourceApplication:sourceApplication];
 }
@@ -138,15 +151,16 @@
 
 - (void)authUI:(FUIAuth *)authUI
 didSignInWithUser:(nullable FIRUser *)user
-         error:(nullable NSError *)error {
+error:(nullable NSError *)error {
     // Implement this method to handle signed in user or error if any.
 }
 
-- (void)setup{
-    if (!self.loggedIn) {
-        [self authUser];
-    }
+#pragma mark - inherited methods
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setup];
 }
+
 
 //- (void)locationOpen {
 //    //Get hours from Database in this format
