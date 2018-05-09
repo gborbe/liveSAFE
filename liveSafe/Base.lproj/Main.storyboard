@@ -239,12 +239,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeO-wt-ou6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3244" y="-461"/>
+            <point key="canvasLocation" x="2451" y="-293"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="zSw-cL-IZh">
             <objects>
-                <viewController restorationIdentifier="Rest" id="3n3-Pi-Xlv" customClass="TableViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Rests" id="3n3-Pi-Xlv" customClass="TableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Opd-b1-TwC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyz-ri-yvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2754" y="-460"/>
+            <point key="canvasLocation" x="2451" y="-1201"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="Th4-LB-dw8">
@@ -469,7 +469,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCU-UE-gfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418" y="1156"/>
+            <point key="canvasLocation" x="596" y="1013"/>
         </scene>
         <!--Org Details View Controller-->
         <scene sceneID="gvf-ga-Ve9">
@@ -503,38 +503,49 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JKz-uE-WEe">
-                                <rect key="frame" x="0.0" y="7" width="33" height="56"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Space Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fZL-fO-JwW">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91318148369999996" green="0.76881170269999999" blue="0.72152906660000005" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" adjustable="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="34"/>
-                                <state key="normal" title="&lt;">
-                                    <color key="titleColor" red="0.0" green="0.76593351359999995" blue="0.738103807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="19"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="35B-Dh-S6g" eventType="touchUpInside" id="wPq-Jz-A9C"/>
-                                    <segue destination="Scv-bt-JuO" kind="modal" identifier="backSegue" id="F5f-z8-D1k"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ayy-6K-b6M">
+                                <rect key="frame" x="16" y="352" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Phone Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GJi-Cm-jTu">
+                                <rect key="frame" x="16" y="402" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Web Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8JZ-jT-TYj">
+                                <rect key="frame" x="16" y="438" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="z18-Bp-49V"/>
                     <connections>
+                        <outlet property="addressLabel" destination="ayy-6K-b6M" id="Yoc-Zl-tIU"/>
                         <outlet property="orgTitle" destination="kQS-xc-svX" id="Evf-zb-ynp"/>
+                        <outlet property="phoneLabel" destination="GJi-Cm-jTu" id="7VD-QK-Nd9"/>
+                        <outlet property="spaceLabel" destination="fZL-fO-JwW" id="xBa-9J-ZcX"/>
+                        <outlet property="webLabel" destination="8JZ-jT-TYj" id="hSs-fy-Aoq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rW6-Ik-nyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="826.5" y="1133.5"/>
+            <point key="canvasLocation" x="3535.5" y="979.5"/>
         </scene>
         <!--Shelters-->
         <scene sceneID="TZ9-sf-kfc">
@@ -555,11 +566,11 @@
             </objects>
             <point key="canvasLocation" x="2151" y="619"/>
         </scene>
-        <!--Item 1-->
+        <!--Rest Stops-->
         <scene sceneID="zMe-pn-SlX">
             <objects>
-                <navigationController restorationIdentifier="Rest Stops" automaticallyAdjustsScrollViewInsets="NO" id="lE8-Ym-4Ld" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ar5-Qc-ycc"/>
+                <navigationController restorationIdentifier="Rests" automaticallyAdjustsScrollViewInsets="NO" id="lE8-Ym-4Ld" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Rest Stops" id="ar5-Qc-ycc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Ir-mW-z2B">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -589,7 +600,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dXt-P0-DU2"/>
-        <segue reference="QAK-k3-pNx"/>
         <segue reference="QN1-O1-AAs"/>
     </inferredMetricsTieBreakers>
 </document>

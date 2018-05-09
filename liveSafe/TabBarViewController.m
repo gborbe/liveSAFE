@@ -77,7 +77,7 @@
             }
             
             if (org.restStop) {
-                [shelterOrgs addObject:org];
+                [restOrgs addObject:org];
             }
             [self.orgObjectLibrary addObject:org];
             
