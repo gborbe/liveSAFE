@@ -146,7 +146,8 @@ options:(NSDictionary *)options {
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    
+    [super viewDidLoad];
+    [self setup];
 }
 
 - (void)authUI:(FUIAuth *)authUI
@@ -157,54 +158,7 @@ error:(nullable NSError *)error {
 
 #pragma mark - inherited methods
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setup];
+    
 }
 
-
-//- (void)locationOpen {
-//    //Get hours from Database in this format
-//    NSString *open = @"08:00 AM";
-//    NSString *close = @"10:00 PM";
-//
-//    //Get current time
-//    NSDate *nowDate = [[NSDate alloc] init];
-//
-//    //Date Formatter
-//    NSDateFormatter *formatTime = [[NSDateFormatter alloc]init];
-//    [formatTime setDateFormat:@"hh:mm a"];
-//
-//    //Open & Close NSString hours to NSDate
-//    NSDate *openDate = [formatTime dateFromString:open];
-//    NSDate *closeDate = [formatTime dateFromString:close];
-//
-//    //Testing
-//    NSLog(@"Current Time: %@",[formatTime stringFromDate:nowDate]);
-//    NSLog(@"Open: %@",[formatTime stringFromDate:openDate]);
-//    NSLog(@"Close: %@",[formatTime stringFromDate:closeDate]);
-//
-//    //Check to see if location is open
-//    int openMin = [self minutesSinceMidnight:openDate];
-//    int closeMin = [self minutesSinceMidnight:closeDate];
-//    int nowMin = [self minutesSinceMidnight:nowDate];
-//
-//    if (nowMin < openMin && nowMin > closeMin) {
-//        NSLog(@"This location is open");
-//    } else if (nowMin > openMin && nowMin < closeMin) {
-//        NSLog(@"This location is open");
-//    } else {
-//        NSLog(@"This location is closed");
-//    }
-//
-//}
-//
-//-(int) minutesSinceMidnight:(NSDate *)date
-//{
-//    NSCalendar *gregorian = [[NSCalendar alloc]
-//                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-//    unsigned unitFlags =  NSCalendarUnitHour | NSCalendarUnitMinute;
-//    NSDateComponents *components = [gregorian components:unitFlags fromDate:date];
-//
-//    return 60 * [components hour] + [components minute];
-//}
 @end

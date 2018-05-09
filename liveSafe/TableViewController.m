@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+
 @property (nonatomic) NSUInteger index;
 
 @property (strong, nonatomic) NSArray *orgsToShow;
@@ -130,13 +131,21 @@
     // components of the cell
     UILabel *OrgName = (UILabel *)[cell viewWithTag:1];
     UILabel *hours = (UILabel *)[cell viewWithTag:3];
+    UILabel *openNowLabel = (UILabel *)[cell viewWithTag:5];
     
     // populate the cell
     OrgName.text = selectedOrg.name;
     NSString *hour1 = selectedOrg.openHour;
     NSString *hour2 = [hour1 stringByAppendingString:@" - "];
     NSString *hourString = [hour2 stringByAppendingString:selectedOrg.closeHour];
-    hours.text = hourString;    
+    hours.text = hourString;
+    if (selectedOrg.openNow) {
+        openNowLabel.text = @"Open";
+        openNowLabel.textColor = [UIColor greenColor];
+    } else {
+        openNowLabel.text = @"Closed";
+        openNowLabel.textColor = [UIColor colorWithRed:200 green:0 blue:0 alpha:1];
+    }
     return cell;
 }
 
