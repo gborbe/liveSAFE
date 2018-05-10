@@ -18,4 +18,6 @@
 @property (strong, nonatomic) NSArray *restOrgs;
 @property (strong, nonatomic) NSArray *shelterOrgs;
 
+- (void)updateMapAndTable;
+
 @end

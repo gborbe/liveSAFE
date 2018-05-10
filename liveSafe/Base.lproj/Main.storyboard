@@ -318,10 +318,10 @@
             </objects>
             <point key="canvasLocation" x="2631.5" y="-1004.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Org Edit View Controller-->
         <scene sceneID="va3-q6-5Fe">
             <objects>
-                <viewController id="ISU-vg-mNH" sceneMemberID="viewController">
+                <viewController id="ISU-vg-mNH" customClass="OrgEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vTY-Gl-Exc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,14 +334,48 @@
                                     <segue destination="AtN-LP-A4v" kind="push" id="uE3-Zr-TAC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="*welcome user*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0LJ-na-piv">
+                                <rect key="frame" x="16" y="85" width="343" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Space:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iQX-9R-E9N">
+                                <rect key="frame" x="16" y="168" width="141" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zxf-43-4df">
+                                <rect key="frame" x="163" y="453" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="ISU-vg-mNH" eventType="touchUpInside" id="06U-ZM-zoZ"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="6Mg-p2-OhK">
+                                <rect key="frame" x="220" y="191" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="stepChanged:" destination="ISU-vg-mNH" eventType="valueChanged" id="T2m-B8-VNs"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="IOV-yT-hT6"/>
+                    <connections>
+                        <outlet property="spacesLabel" destination="iQX-9R-E9N" id="bRR-pe-Ily"/>
+                        <outlet property="stepper" destination="6Mg-p2-OhK" id="WFu-D5-PYv"/>
+                        <outlet property="welcomeTitle" destination="0LJ-na-piv" id="kvd-FY-qwd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMd-ZQ-tpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3112" y="-1005"/>
+            <point key="canvasLocation" x="3111.5" y="-1005.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MvY-Kc-O2i">
@@ -378,6 +412,7 @@
         <!--Table View Controller-->
         <scene sceneID="zSw-cL-IZh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7V-lU-o8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController restorationIdentifier="Rests" id="3n3-Pi-Xlv" customClass="TableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Opd-b1-TwC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -456,9 +491,9 @@
                     <connections>
                         <outlet property="mapView" destination="ZAD-ZH-g3x" id="fb8-53-W4y"/>
                         <outlet property="tableView" destination="gZX-Jx-RcI" id="rL5-MG-gdK"/>
+                        <segue destination="35B-Dh-S6g" kind="push" identifier="orgSelectedSegue" id="qHx-ys-ZOC"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I7V-lU-o8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2631.5" y="1485.5"/>
         </scene>
@@ -557,6 +592,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="qrh-tO-epT"/>
+                    <connections>
+                        <outlet property="tableView" destination="FEG-AM-nHK" id="dQj-TM-NZR"/>
+                        <segue destination="35B-Dh-S6g" kind="push" identifier="orgSelectedSegue" id="TF4-ZV-N0T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTG-x1-jac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -829,7 +868,7 @@
         <image name="shower" width="320" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dXt-P0-DU2"/>
+        <segue reference="TF4-ZV-N0T"/>
         <segue reference="uXc-7m-0Cn"/>
     </inferredMetricsTieBreakers>
 </document>

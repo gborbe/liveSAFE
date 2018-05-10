@@ -91,6 +91,7 @@
                     tableVC.mealOrgs = mealOrgs;
                     tableVC.shelterOrgs = shelterOrgs;
                     tableVC.restOrgs = restOrgs;
+                    [tableVC updateMapAndTable];
                 }
             }
         }

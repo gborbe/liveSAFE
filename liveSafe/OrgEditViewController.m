@@ -17,8 +17,10 @@
 
 @interface OrgEditViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *welcomeTitle;
-@property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (weak, nonatomic) IBOutlet UITextField *hoursTextField;
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
+@property (weak, nonatomic) IBOutlet UILabel *spacesLabel;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) NSMutableDictionary *dictToPush;
 @property (strong, nonatomic) NSString *valueToPush;
 @property (nonatomic) NSString *uid;
@@ -27,7 +29,10 @@
 @end
 
 @implementation OrgEditViewController
-
+- (IBAction)stepChanged:(UIStepper *)sender
+{
+    self.spacesLabel.text = [NSString stringWithFormat:@"Spaces: %i", (int)self.stepper.value];
+}
 
 -(void)setupUser {
     self.ref = [[FIRDatabase database] reference];
@@ -82,10 +87,10 @@
     NSString *logEntry = @"";
     
     // Extract text value from field and change local dictionary in order to be updated
-    self.dictToPush[@"space"] = self.hoursTextField.text;
+    self.dictToPush[@"space"] = [NSString stringWithFormat:@"%i",(int)self.stepper.value];
     NSDictionary *childUpdates = @{[@"/Organizations/" stringByAppendingString:self.uid]: self.dictToPush};
     [self.ref updateChildValues:childUpdates];
-    NSString *spaceEntry = [@"Space: " stringByAppendingString:self.hoursTextField.text];
+    NSString *spaceEntry = [@"Space: " stringByAppendingString:[NSString stringWithFormat:@"%i",(int)self.stepper.value]];
     logEntry = [logEntry stringByAppendingString:spaceEntry];
     
     //Add to log/history
@@ -100,7 +105,7 @@
 
 - (IBAction)submitButtonPressed:(UIButton *)sender {
     
-    self.valueToPush = self.hoursTextField.text;
+    self.valueToPush = [NSString stringWithFormat:@"%i",(int)self.stepper.value];
     [self pushNewValueToDatabase];
     
     // Add update to history log with date and time of submission

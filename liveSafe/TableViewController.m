@@ -91,6 +91,8 @@
 }
 - (void)updateMapAndTable
 {
+    NSLog(@"RestID: %@", self.restorationIdentifier);
+    
     if ([self.restorationIdentifier isEqualToString:@"Shelters"]) {
         self.orgsToShow = self.shelterOrgs;
     } else if ([self.restorationIdentifier isEqualToString:@"Rests"]) {
