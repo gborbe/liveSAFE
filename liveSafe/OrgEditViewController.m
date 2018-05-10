@@ -16,8 +16,6 @@
 @import FirebaseGoogleAuthUI;
 
 @interface OrgEditViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *welcomeTitle;
-@property (weak, nonatomic) IBOutlet UITextField *hoursTextField;
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
 @property (weak, nonatomic) IBOutlet UILabel *spacesLabel;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
@@ -31,7 +29,7 @@
 @implementation OrgEditViewController
 - (IBAction)stepChanged:(UIStepper *)sender
 {
-    self.spacesLabel.text = [NSString stringWithFormat:@"Spaces: %i", (int)self.stepper.value];
+    self.spacesLabel.text = [NSString stringWithFormat:@"%i", (int)self.stepper.value];
 }
 
 -(void)setupUser {
@@ -44,7 +42,7 @@
 }
 
 -(void)setupUserScreen {
-    self.welcomeTitle.text = [NSString stringWithFormat:@"Welcome, %@", self.userOrg.name];
+
 }
 
 - (void)getDatabaseNodeToChange{
