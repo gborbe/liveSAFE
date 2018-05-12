@@ -11,11 +11,10 @@
 
 @interface OrgDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *orgTitle;
-@property (weak, nonatomic) IBOutlet UILabel *spaceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
-@property (weak, nonatomic) IBOutlet UILabel *webLabel;
-
+@property (weak, nonatomic) IBOutlet UITextView *spaceText;
+@property (weak, nonatomic) IBOutlet UITextView *addressText;
+@property (weak, nonatomic) IBOutlet UITextView *phoneText;
+@property (weak, nonatomic) IBOutlet UITextView *webText;
 @end
 
 @implementation OrgDetailsViewController
@@ -33,10 +32,10 @@
 
 - (void)setup {
     self.orgTitle.text = self.orgDetails.name;
-    self.spaceLabel.text = [@"Space: " stringByAppendingString:self.orgDetails.space];
-    self.addressLabel.text = self.orgDetails.address;
-    self.webLabel.text = self.orgDetails.website;
-    self.phoneLabel.text = self.orgDetails.phone;
+    self.spaceText.text = [@"Space: " stringByAppendingString:self.orgDetails.space];
+    self.addressText.text = self.orgDetails.address;
+    self.webText.text = self.orgDetails.website;
+    self.phoneText.text = self.orgDetails.phone;
 }
 
 //- (IBAction)backButtonPressed:(UIButton *)sender {

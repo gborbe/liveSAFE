@@ -134,6 +134,7 @@
     UILabel *OrgName = (UILabel *)[cell viewWithTag:1];
     UILabel *hours = (UILabel *)[cell viewWithTag:3];
     UILabel *openNowLabel = (UILabel *)[cell viewWithTag:5];
+    UILabel *spaceLabel = (UILabel *)[cell viewWithTag:9];
     
     // populate the cell
     OrgName.text = selectedOrg.name;
@@ -141,6 +142,8 @@
     NSString *hour2 = [hour1 stringByAppendingString:@" - "];
     NSString *hourString = [hour2 stringByAppendingString:selectedOrg.closeHour];
     hours.text = hourString;
+    NSString *spaceStart = @"Space: ";
+    spaceLabel.text = [spaceStart stringByAppendingString:selectedOrg.space];
     if (selectedOrg.openNow) {
         openNowLabel.text = @"Open";
         openNowLabel.textColor = [UIColor greenColor];
