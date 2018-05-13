@@ -37,6 +37,7 @@
         self.logoutButton.hidden = YES;
         self.loginButton.hidden = NO;
     }
+    [self buttonChange];
 }
 
 - (BOOL)loggedIn
@@ -49,6 +50,7 @@
         NSLog(@"Nobody is signed in");
         return NO;
     }
+
 }
 
 - (IBAction)loginButtonPressed:(UIButton *)sender {
@@ -98,8 +100,8 @@ didSignInWithUser:(nullable FIRUser *)user
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
     [self setup];
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,6 +109,15 @@ didSignInWithUser:(nullable FIRUser *)user
     // Dispose of any resources that can be recreated.
 }
 
+- (void)buttonChange {
+    if (FIRAuth.auth.currentUser != nil) {
+        self.title = @"Account";
+        self.navigationItem.title = @"Account";
+    } else {
+        self.title = @"Login";
+        self.navigationItem.title = @"Login";
+    }
+}
 /*
 #pragma mark - Navigation
 

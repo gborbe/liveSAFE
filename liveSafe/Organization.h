@@ -16,6 +16,7 @@
 @property (nonatomic) NSString *phone;
 @property (nonatomic) NSString *website;
 @property (nonatomic) NSString *space;
+@property (nonatomic) NSString *maxSpace;
 @property (nonatomic) NSString *openHour;
 @property (nonatomic) NSString *closeHour;
 @property (nonatomic) NSMutableArray *services;

@@ -134,7 +134,7 @@
     UILabel *OrgName = (UILabel *)[cell viewWithTag:1];
     UILabel *hours = (UILabel *)[cell viewWithTag:3];
     UILabel *openNowLabel = (UILabel *)[cell viewWithTag:5];
-    UILabel *spaceLabel = (UILabel *)[cell viewWithTag:9];
+    UILabel *infoLabel = (UILabel *)[cell viewWithTag:9];
     
     // populate the cell
     OrgName.text = selectedOrg.name;
@@ -142,14 +142,25 @@
     NSString *hour2 = [hour1 stringByAppendingString:@" - "];
     NSString *hourString = [hour2 stringByAppendingString:selectedOrg.closeHour];
     hours.text = hourString;
-    NSString *spaceStart = @"Space: ";
-    spaceLabel.text = [spaceStart stringByAppendingString:selectedOrg.space];
+    
+    if ([self.restorationIdentifier isEqualToString:@"Shelters"]) {
+        NSString *spaceInit = @"Space: ";
+        NSString *spaceStart = [spaceInit stringByAppendingString:selectedOrg.space];
+        NSString *slash = @"/";
+        NSString *spaceEnd = [slash stringByAppendingString:selectedOrg.maxSpace];
+        infoLabel.text = [spaceStart stringByAppendingString:spaceEnd];
+    } else if ([self.restorationIdentifier isEqualToString:@"Rests"]) {
+        infoLabel.text = @"";
+    } else if ([self.restorationIdentifier isEqualToString:@"Food"]) {
+        infoLabel.text = @"";
+    }
+    
     if (selectedOrg.openNow) {
         openNowLabel.text = @"Open";
-        openNowLabel.textColor = [UIColor greenColor];
+        openNowLabel.textColor = [UIColor colorWithRed:0.0 green:175.0/255.0 blue:0.0 alpha:1.0];
     } else {
         openNowLabel.text = @"Closed";
-        openNowLabel.textColor = [UIColor colorWithRed:200 green:0 blue:0 alpha:1];
+        openNowLabel.textColor = [UIColor colorWithRed:200.0/255.0 green:0 blue:0 alpha:1];
     }
     return cell;
 }
@@ -175,17 +186,24 @@
 }
 #pragma mark - Inherited Methods
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self setup];
     [self setupLocationManager];
+    [self setupLogo];
+    [super viewDidLoad];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     NSLog(@"view with restorationID %@ will appear", self.restorationIdentifier);
     [self updateMapAndTable];
+    [self setupLogo];
 }
 
-
+- (void) setupLogo {
+    UIImage *navImage = [UIImage imageNamed:@"navLogo.png"];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [imgView setImage:navImage];
+    [imgView setContentMode:UIViewContentModeScaleAspectFit];
+    self.navigationItem.titleView = imgView;
+}
 @end
 

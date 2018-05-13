@@ -38,8 +38,9 @@
 
 
 #pragma mark - Database Compiling
+//observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot)
 - (void)collectData{
-    [[self.ref child:@"Organizations"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+    [[self.ref child:@"Organizations"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         self.shelterDataCollection = snapshot.value;
         
         NSMutableArray *restOrgs = [[NSMutableArray alloc] init];
@@ -59,6 +60,7 @@
             org.phone = [NSString stringWithString:[entry objectForKey:@"phone"]];
             org.website = [NSString stringWithString:[entry objectForKey:@"website"]];
             org.space = [NSString stringWithString:[entry objectForKey:@"space"]];
+            org.maxSpace = [NSString stringWithString:[entry objectForKey:@"maxSpace"]];
             org.openHour = [NSString stringWithString:[entry objectForKey:@"openTime"]];
             org.closeHour = [NSString stringWithString:[entry objectForKey:@"closeTime"]];
             org.servicesDescription = [NSString stringWithString:[entry objectForKey:@"servicesDescription"]];
@@ -104,13 +106,13 @@
 
 #pragma mark - Firebase Authentication
 
-- (void)buttonChange {
-    //    if (FIRAuth.auth.currentUser != nil) {
-    //        <#statements#>;
-    //    } else {
-    //        <#statements#>;
-    //    }
-}
+//- (void)buttonChange {
+//        if (FIRAuth.auth.currentUser != nil) {
+//            
+//        } else {
+//            
+//        }
+//}
 
 - (BOOL)loggedIn
 {
@@ -124,11 +126,11 @@
     }
 }
 
-- (IBAction)signInButtonPressed:(id)sender
-{
-    UINavigationController *authViewController = [self.authUI authViewController];
-    [self presentViewController:authViewController animated:YES completion:nil];
-}
+//- (IBAction)signInButtonPressed:(id)sender
+//{
+//    UINavigationController *authViewController = [self.authUI authViewController];
+//    [self presentViewController:authViewController animated:YES completion:nil];
+//}
 
 - (void)authUser {
     self.authUI = [FUIAuth defaultAuthUI];
@@ -147,8 +149,8 @@ options:(NSDictionary *)options {
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
     [self setup];
+    [super viewDidLoad];
 }
 
 - (void)authUI:(FUIAuth *)authUI
@@ -159,7 +161,7 @@ error:(nullable NSError *)error {
 
 #pragma mark - inherited methods
 - (void)viewDidLoad {
-    
+    [self setup];
 }
 
 @end
