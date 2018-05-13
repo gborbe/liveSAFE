@@ -507,24 +507,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lifesafe logo 3.1-1" translatesAutoresizingMaskIntoConstraints="NO" id="ARR-kS-Qq7">
-                                <rect key="frame" x="124" y="0.0" width="126" height="70"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDk-bq-Z7T">
+                                <rect key="frame" x="0.0" y="64" width="414" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDk-bq-Z7T">
-                                <rect key="frame" x="0.0" y="100" width="414" height="214"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Org Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQS-xc-svX">
-                                <rect key="frame" x="0.0" y="59" width="414" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.9369429349899292" green="0.94518846273422241" blue="0.94507712125778198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="28"/>
-                                <color key="textColor" red="0.41395267364262939" green="0.43573524746192893" blue="0.4316292568118183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Phone Text" translatesAutoresizingMaskIntoConstraints="NO" id="rRq-6v-eq0">
-                                <rect key="frame" x="16" y="428" width="378" height="45"/>
+                                <rect key="frame" x="44" y="481" width="347" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
@@ -532,7 +520,7 @@
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Address Text" translatesAutoresizingMaskIntoConstraints="NO" id="4jg-D7-DCJ">
-                                <rect key="frame" x="16" y="375" width="378" height="45"/>
+                                <rect key="frame" x="44" y="415" width="350" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
@@ -540,7 +528,7 @@
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Space Text" translatesAutoresizingMaskIntoConstraints="NO" id="WnR-hg-LGR">
-                                <rect key="frame" x="16" y="322" width="378" height="45"/>
+                                <rect key="frame" x="44" y="613" width="347" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
@@ -548,12 +536,81 @@
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Web Text" translatesAutoresizingMaskIntoConstraints="NO" id="e8t-o4-3Tf">
-                                <rect key="frame" x="16" y="481" width="378" height="45"/>
+                                <rect key="frame" x="44" y="544" width="350" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yr9-yV-C8g">
+                                <rect key="frame" x="23" y="332" width="368" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Basic Info"/>
+                                    <segment title="Our Services"/>
+                                    <segment title="About Us"/>
+                                </segments>
+                                <connections>
+                                    <action selector="innerTabChanged:" destination="35B-Dh-S6g" eventType="valueChanged" id="hDz-QU-smh"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pb-b7-Ocd">
+                                <rect key="frame" x="23" y="393" width="72" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <color key="textColor" red="0.420175701379776" green="0.4390416145324707" blue="0.43502932786941528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f0-6k-iV9">
+                                <rect key="frame" x="23" y="393" width="82" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requirements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcG-Bn-0cf">
+                                <rect key="frame" x="23" y="392" width="124" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2b-zG-Fn1">
+                                <rect key="frame" x="20" y="458" width="57" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXh-8W-d92">
+                                <rect key="frame" x="23" y="517" width="74" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Space" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLM-pc-FSg">
+                                <rect key="frame" x="23" y="587" width="52" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-tj-em2" userLabel="About Us Text">
+                                <rect key="frame" x="23" y="425" width="368" height="233"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="require" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ElK-ud-cUg" userLabel="Require Text">
+                                <rect key="frame" x="23" y="425" width="368" height="233"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -561,10 +618,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="z18-Bp-49V"/>
                     <connections>
+                        <outlet property="aboutUsLabel" destination="6f0-6k-iV9" id="q2o-aK-jQX"/>
+                        <outlet property="aboutUsText" destination="9cO-tj-em2" id="moI-16-P45"/>
+                        <outlet property="addressLabel" destination="7Pb-b7-Ocd" id="vAF-UV-pzk"/>
                         <outlet property="addressText" destination="4jg-D7-DCJ" id="t9z-qq-HGE"/>
-                        <outlet property="orgTitle" destination="kQS-xc-svX" id="Evf-zb-ynp"/>
+                        <outlet property="imageView" destination="ZDk-bq-Z7T" id="xD2-ow-K9D"/>
+                        <outlet property="phoneLabel" destination="v2b-zG-Fn1" id="QFJ-tN-Tfp"/>
                         <outlet property="phoneText" destination="rRq-6v-eq0" id="Tfd-J9-bSk"/>
+                        <outlet property="requireLabel" destination="dcG-Bn-0cf" id="Ugy-pR-pQh"/>
+                        <outlet property="requireText" destination="ElK-ud-cUg" id="KEV-B8-zxk"/>
+                        <outlet property="segControl" destination="yr9-yV-C8g" id="Wmp-kw-fhS"/>
+                        <outlet property="spaceLabel" destination="yLM-pc-FSg" id="1th-If-Jer"/>
                         <outlet property="spaceText" destination="WnR-hg-LGR" id="jDj-qF-azE"/>
+                        <outlet property="webLabel" destination="HXh-8W-d92" id="3Kz-VD-cxN"/>
                         <outlet property="webText" destination="e8t-o4-3Tf" id="3G2-0c-NGP"/>
                     </connections>
                 </viewController>
@@ -614,11 +680,10 @@
     <resources>
         <image name="bed-F_1_69x69" width="23" height="23"/>
         <image name="fork-F_69x69" width="23" height="23"/>
-        <image name="lifesafe logo 3.1-1" width="683" height="384"/>
         <image name="person-15_69x69" width="23" height="23"/>
         <image name="shower-F_69x69" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dXt-P0-DU2"/>
+        <segue reference="TF4-ZV-N0T"/>
     </inferredMetricsTieBreakers>
 </document>

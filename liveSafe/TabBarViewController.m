@@ -69,6 +69,7 @@
             org.meals = [[entry objectForKey:@"hasMeals"] boolValue];
             org.shelter = [[entry objectForKey:@"hasShelter"] boolValue];
             org.restStop = [[entry objectForKey:@"hasRest"] boolValue];
+            org.about = [NSString stringWithString:[entry objectForKey:@"about"]];
             
             if (org.meals) {
                 [mealOrgs addObject:org];

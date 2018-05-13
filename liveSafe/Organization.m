@@ -31,9 +31,9 @@
     NSDate *closeDate = [formatTime dateFromString:close];
     
     //Testing
-    NSLog(@"Current Time: %@",[formatTime stringFromDate:nowDate]);
-    NSLog(@"Open: %@",[formatTime stringFromDate:openDate]);
-    NSLog(@"Close: %@",[formatTime stringFromDate:closeDate]);
+//    NSLog(@"Current Time: %@",[formatTime stringFromDate:nowDate]);
+//    NSLog(@"Open: %@",[formatTime stringFromDate:openDate]);
+//    NSLog(@"Close: %@",[formatTime stringFromDate:closeDate]);
     
     //Check to see if location is open
     int openMin = [self minutesSinceMidnight:openDate];
