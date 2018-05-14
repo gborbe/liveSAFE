@@ -14,4 +14,6 @@
 
 @interface TabBarViewController : UITabBarController <FUIAuthDelegate>
 
+@property (nonatomic) int selectedChildViewController;
+
 @end

@@ -26,6 +26,8 @@
 
 - (void)setup
 {
+    
+    
     if (!self.loggedIn) {
         [self authUser];
     }
@@ -163,6 +165,10 @@ error:(nullable NSError *)error {
 #pragma mark - inherited methods
 - (void)viewDidLoad {
     [self setup];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.selectedIndex = self.selectedChildViewController;
 }
 
 @end

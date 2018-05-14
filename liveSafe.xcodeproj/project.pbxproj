@@ -17,6 +17,7 @@
 		8E871F06204DF1D400101CE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E871F04204DF1D400101CE0 /* LaunchScreen.storyboard */; };
 		8E871F09204DF1D400101CE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E871F08204DF1D400101CE0 /* main.m */; };
 		8E871F10204DF1FF00101CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E871F0F204DF1FF00101CE0 /* GoogleService-Info.plist */; };
+		8EA3512320AA3C820029F630 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA3512220AA3C820029F630 /* HomeViewController.m */; };
 		8EA5A17B208AC1400074A10A /* OrgDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5A17A208AC1400074A10A /* OrgDetailsViewController.m */; };
 		8EA5A185208AC4900074A10A /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C7C207C192F00DE70B0 /* Lato-Black.ttf */; };
 		8EA5A186208AC4900074A10A /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE97C79207C192E00DE70B0 /* Lato-BlackItalic.ttf */; };
@@ -54,6 +55,8 @@
 		8E871F07204DF1D400101CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E871F08204DF1D400101CE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8E871F0F204DF1FF00101CE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8EA3512120AA3C820029F630 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		8EA3512220AA3C820029F630 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		8EA5A179208AC1400074A10A /* OrgDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrgDetailsViewController.h; sourceTree = "<group>"; };
 		8EA5A17A208AC1400074A10A /* OrgDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrgDetailsViewController.m; sourceTree = "<group>"; };
 		8EBF401F20A37F5F005F1B40 /* AccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				8E871EFF204DF1D400101CE0 /* Main.storyboard */,
 				8E871EFC204DF1D400101CE0 /* ViewController.h */,
 				8E871EFD204DF1D400101CE0 /* ViewController.m */,
+				8EA3512120AA3C820029F630 /* HomeViewController.h */,
+				8EA3512220AA3C820029F630 /* HomeViewController.m */,
 				8EBF401F20A37F5F005F1B40 /* AccountViewController.h */,
 				8EBF402020A37F5F005F1B40 /* AccountViewController.m */,
 				8E0DD5D8209A63800063C432 /* TabBarViewController.h */,
@@ -334,6 +339,7 @@
 				2C41CD41207C054A00548D94 /* TableViewController.m in Sources */,
 				8EBF402120A37F5F005F1B40 /* AccountViewController.m in Sources */,
 				8E871F09204DF1D400101CE0 /* main.m in Sources */,
+				8EA3512320AA3C820029F630 /* HomeViewController.m in Sources */,
 				8ED081372072B73A00F0A84F /* OrgEditViewController.m in Sources */,
 				8ED0813A20780D5500F0A84F /* Organization.m in Sources */,
 				8E0DD5DA209A63800063C432 /* TabBarViewController.m in Sources */,
