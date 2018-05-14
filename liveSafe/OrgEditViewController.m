@@ -18,15 +18,26 @@
 @interface OrgEditViewController ()
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
 @property (weak, nonatomic) IBOutlet UILabel *spacesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *spaceLimitLabel;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) NSMutableDictionary *dictToPush;
 @property (strong, nonatomic) NSString *valueToPush;
 @property (nonatomic) NSString *uid;
 @property (nonatomic) Organization *userOrg;
+@property (weak, nonatomic) IBOutlet UILabel *orgTitle;
+
+@property (weak, nonatomic) IBOutlet UITextField *orgTitleEditField;
+@property (weak, nonatomic) IBOutlet UITextField *orgAddressEditField;
+@property (weak, nonatomic) IBOutlet UITextField *orgPhoneEditField;
+@property (weak, nonatomic) IBOutlet UITextField *orgWebEditField;
+@property (weak, nonatomic) IBOutlet UITextField *orgMaxSpaceEditField;
+
+
 
 @end
 
 @implementation OrgEditViewController
+
 - (IBAction)stepChanged:(UIStepper *)sender
 {
     self.spacesLabel.text = [NSString stringWithFormat:@"%i", (int)self.stepper.value];
@@ -75,7 +86,22 @@
         self.userOrg.servicesDescription = [NSString stringWithString:[collection objectForKey:@"servicesDescription"]];
         self.userOrg.requirements = [NSString stringWithString:[collection objectForKey:@"requirements"]];
         self.userOrg.imgURL = [NSString stringWithString:[collection objectForKey:@"img"]];
+        self.userOrg.maxSpace = [collection objectForKey:@"maxSpace"];
+        
+        self.spacesLabel.text = self.userOrg.space;
+        self.orgTitle.text = self.userOrg.name;
+        self.stepper.value = [self.userOrg.space doubleValue];
+        NSString *maxString = @"Space Limit: ";
+        self.spaceLimitLabel.text = [maxString stringByAppendingString:self.userOrg.maxSpace];
+        
+        self.orgTitleEditField.placeholder = self.userOrg.name;
+        self.orgAddressEditField.placeholder = self.userOrg.address;
+        self.orgPhoneEditField.placeholder = self.userOrg.phone;
+        self.orgWebEditField.placeholder = self.userOrg.website;
+        self.orgMaxSpaceEditField.placeholder = self.userOrg.maxSpace;
+//        self.orgReqEditField.text = self.userOrg.requirements;
     }];
+    
 }
 
 - (void)pushNewValueToDatabase
@@ -86,6 +112,25 @@
     
     // Extract text value from field and change local dictionary in order to be updated
     self.dictToPush[@"space"] = [NSString stringWithFormat:@"%i",(int)self.stepper.value];
+    if (self.orgTitleEditField != nil) {
+        self.dictToPush[@"name"] = self.orgTitleEditField.text;
+    }
+    if (self.orgAddressEditField.text != nil) {
+        self.dictToPush[@"address"] = self.orgAddressEditField.text;
+    }
+    if (self.orgPhoneEditField.text != nil) {
+        self.dictToPush[@"phone"] = self.orgPhoneEditField.text;
+    }
+    if (self.orgWebEditField.text != nil) {
+        self.dictToPush[@"website"] = self.orgWebEditField.text;
+    }
+    if (self.orgMaxSpaceEditField.text != nil) {
+        self.dictToPush[@"maxSpace"] = self.orgMaxSpaceEditField.text;
+    }
+//    if (self.orgReqEditField.text != nil) {
+//        self.dictToPush[@"requirements"] = self.orgReqEditField.text;
+//    }
+
     NSDictionary *childUpdates = @{[@"/Organizations/" stringByAppendingString:self.uid]: self.dictToPush};
     [self.ref updateChildValues:childUpdates];
     NSString *spaceEntry = [@"Space: " stringByAppendingString:[NSString stringWithFormat:@"%i",(int)self.stepper.value]];
@@ -98,7 +143,7 @@
     NSString *loggedTime = [formatTime stringFromDate:now];
     NSString *logLocation = [@"/Data/" stringByAppendingString:self.uid];
     NSDictionary *logUpdate = @{[logLocation stringByAppendingString:loggedTime]: logEntry};
-    [[[[_ref child:@"Data"] child:self.uid] child:loggedTime] setValue:logEntry];
+    [[[[_ref child:@"Data"] child:self.uid] child:loggedTime] setValue:self.dictToPush];
 }
 
 - (IBAction)submitButtonPressed:(UIButton *)sender {
@@ -114,16 +159,16 @@
     NSLog(loggedTime);
 }
 
-- (IBAction)logoutButton:(id)sender {
-    NSError *signOutError;
-    BOOL status = [[FIRAuth auth] signOut:&signOutError];
-    if (!status) {
-        NSLog(@"Error signing out: %@", signOutError);
-        return;
-    }else{
-        NSLog(@"Successfully Signout");
-    }
-}
+//- (IBAction)logoutButton:(id)sender {
+//    NSError *signOutError;
+//    BOOL status = [[FIRAuth auth] signOut:&signOutError];
+//    if (!status) {
+//        NSLog(@"Error signing out: %@", signOutError);
+//        return;
+//    }else{
+//        NSLog(@"Successfully Signout");
+//    }
+//}
 
 #pragma mark - Inherited Methods
 
