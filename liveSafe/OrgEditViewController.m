@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *orgWebEditField;
 @property (weak, nonatomic) IBOutlet UITextField *orgMaxSpaceEditField;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 
 @end
@@ -206,6 +207,7 @@
     [self setupUser];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.scrollView.contentSize = CGSizeMake(414, 894);
 }
 
 - (void)didReceiveMemoryWarning {
