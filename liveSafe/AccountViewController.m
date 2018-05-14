@@ -27,7 +27,6 @@
     if (!self.loggedIn) {
         [self authUser];
     }
-    [self loggedIn];
     if ([self loggedIn]) {
         self.loginButton.hidden = YES;
         self.editButton.hidden = NO;
@@ -67,6 +66,7 @@
     }else{
         NSLog(@"Successfully Signout");
     }
+    [self setup];
 }
 
 - (void)authUser {
@@ -93,17 +93,17 @@ didSignInWithUser:(nullable FIRUser *)user
 #pragma mark - Inherited Methods
 
 - (void)viewDidLoad {
-    [self setup];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [self setup];
-    [super viewDidLoad];
+    if (!self.loggedIn) {
+    } else {
+        [self buttonChange];
+    }
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

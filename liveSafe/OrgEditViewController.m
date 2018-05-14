@@ -25,6 +25,9 @@
 @property (nonatomic) NSString *uid;
 @property (nonatomic) Organization *userOrg;
 @property (weak, nonatomic) IBOutlet UILabel *orgTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdateDate;
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdateSpace;
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdateTitle;
 
 @property (weak, nonatomic) IBOutlet UITextField *orgTitleEditField;
 @property (weak, nonatomic) IBOutlet UITextField *orgAddressEditField;
@@ -43,6 +46,16 @@
     self.spacesLabel.text = [NSString stringWithFormat:@"%i", (int)self.stepper.value];
 }
 
+- (IBAction)resetStepper:(UIButton *)sender {
+    self.stepper.value = 0.0;
+    [self stepChanged:self.stepper];
+}
+
+- (IBAction)maxButtonPushed:(UIButton *)sender {
+    self.stepper.value = [self.userOrg.maxSpace doubleValue];
+    [self stepChanged:self.stepper];
+}
+
 -(void)setupUser {
     self.ref = [[FIRDatabase database] reference];
     FIRAuth *auth = [FIRAuth auth];
@@ -53,7 +66,9 @@
 }
 
 -(void)setupUserScreen {
-
+    [self.stepper setIncrementImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
+    [self.stepper setDecrementImage:[UIImage imageNamed:@"minus.png"] forState:UIControlStateNormal];
+    [self.stepper setBackgroundImage:[UIImage imageNamed:@"stepBkg.png"] forState:UIControlStateNormal];
 }
 
 - (void)getDatabaseNodeToChange{
@@ -136,14 +151,29 @@
     NSString *spaceEntry = [@"Space: " stringByAppendingString:[NSString stringWithFormat:@"%i",(int)self.stepper.value]];
     logEntry = [logEntry stringByAppendingString:spaceEntry];
     
-    //Add to log/history
+    //Add to log/history in database
     NSDate *now = [[NSDate alloc] init];
     NSDateFormatter *formatTime = [[NSDateFormatter alloc]init];
-    [formatTime setDateFormat:@"MM|dd|yy hh:mm:ss a"];
+    [formatTime setDateFormat:@"MM|dd|yyyy hh:mm:ss a"];
     NSString *loggedTime = [formatTime stringFromDate:now];
     NSString *logLocation = [@"/Data/" stringByAppendingString:self.uid];
     NSDictionary *logUpdate = @{[logLocation stringByAppendingString:loggedTime]: logEntry};
     [[[[_ref child:@"Data"] child:self.uid] child:loggedTime] setValue:self.dictToPush];
+    
+    self.lastUpdateDate.text = loggedTime;
+    self.lastUpdateSpace.text = spaceEntry;
+    
+    
+//    //Add to iOS log
+//    NSString *spaceMobileReport = [@" Space:" stringByAppendingString:[NSString stringWithFormat:@"%i",(int)self.stepper.value]];
+//    NSString *constructLog = [loggedTime stringByAppendingString:spaceMobileReport];
+//    self.logIndex++;
+//    [self.mobileLog setObject:[NSNumber numberWithInt:self.logIndex] forKey:constructLog];
+//    for (NSString* key in self.mobileLog) {
+//        NSString *value = [self.mobileLog objectForKey:key];
+//        self.logTextView.text = [value stringByAppendingString:@"\n"];
+//    }
+    
 }
 
 - (IBAction)submitButtonPressed:(UIButton *)sender {
