@@ -103,12 +103,16 @@
         self.userOrg.requirements = [NSString stringWithString:[collection objectForKey:@"requirements"]];
         self.userOrg.imgURL = [NSString stringWithString:[collection objectForKey:@"img"]];
         self.userOrg.maxSpace = [collection objectForKey:@"maxSpace"];
+        self.userOrg.lastUpdate = [collection objectForKey:@"lastUpdate"];
         
         self.spacesLabel.text = self.userOrg.space;
         self.orgTitle.text = self.userOrg.name;
         self.stepper.value = [self.userOrg.space doubleValue];
         NSString *maxString = @"Space Limit: ";
         self.spaceLimitLabel.text = [maxString stringByAppendingString:self.userOrg.maxSpace];
+        self.lastUpdateDate.text = self.userOrg.lastUpdate;
+        NSString *spaceString = @"Space: ";
+        self.lastUpdateSpace.text = [spaceString stringByAppendingString:self.userOrg.space];
         
         self.orgTitleEditField.placeholder = self.userOrg.name;
         self.orgAddressEditField.placeholder = self.userOrg.address;
@@ -122,9 +126,12 @@
 
 - (void)pushNewValueToDatabase
 {
-    // Property to be editted
-        // NSString *newKey = @"space";
+    // Initiate entries and get current time
     NSString *logEntry = @"";
+    NSDate *now = [[NSDate alloc] init];
+    NSDateFormatter *formatTime = [[NSDateFormatter alloc]init];
+    [formatTime setDateFormat:@"MM|dd|yyyy hh:mm:ss a"];
+    NSString *loggedTime = [formatTime stringFromDate:now];
     
     // Extract text value from field and change local dictionary in order to be updated
     self.dictToPush[@"space"] = [NSString stringWithFormat:@"%i",(int)self.stepper.value];
@@ -143,20 +150,14 @@
     if (self.orgMaxSpaceEditField.text != nil) {
         self.dictToPush[@"maxSpace"] = self.orgMaxSpaceEditField.text;
     }
-//    if (self.orgReqEditField.text != nil) {
-//        self.dictToPush[@"requirements"] = self.orgReqEditField.text;
-//    }
-
+    self.dictToPush[@"lastUpdate"] = loggedTime;
+    
     NSDictionary *childUpdates = @{[@"/Organizations/" stringByAppendingString:self.uid]: self.dictToPush};
     [self.ref updateChildValues:childUpdates];
     NSString *spaceEntry = [@"Space: " stringByAppendingString:[NSString stringWithFormat:@"%i",(int)self.stepper.value]];
     logEntry = [logEntry stringByAppendingString:spaceEntry];
     
     //Add to log/history in database
-    NSDate *now = [[NSDate alloc] init];
-    NSDateFormatter *formatTime = [[NSDateFormatter alloc]init];
-    [formatTime setDateFormat:@"MM|dd|yyyy hh:mm:ss a"];
-    NSString *loggedTime = [formatTime stringFromDate:now];
     NSString *logLocation = [@"/Data/" stringByAppendingString:self.uid];
     NSDictionary *logUpdate = @{[logLocation stringByAppendingString:loggedTime]: logEntry};
     [[[[_ref child:@"Data"] child:self.uid] child:loggedTime] setValue:self.dictToPush];
@@ -164,16 +165,6 @@
     self.lastUpdateDate.text = loggedTime;
     self.lastUpdateSpace.text = spaceEntry;
     
-    
-//    //Add to iOS log
-//    NSString *spaceMobileReport = [@" Space:" stringByAppendingString:[NSString stringWithFormat:@"%i",(int)self.stepper.value]];
-//    NSString *constructLog = [loggedTime stringByAppendingString:spaceMobileReport];
-//    self.logIndex++;
-//    [self.mobileLog setObject:[NSNumber numberWithInt:self.logIndex] forKey:constructLog];
-//    for (NSString* key in self.mobileLog) {
-//        NSString *value = [self.mobileLog objectForKey:key];
-//        self.logTextView.text = [value stringByAppendingString:@"\n"];
-//    }
     
 }
 
@@ -203,11 +194,11 @@
 
 #pragma mark - Inherited Methods
 
-- (void)viewDidLoad {
+- (void)viewWillAppear:(BOOL)animated {
     [self setupUser];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.scrollView.contentSize = CGSizeMake(414, 894);
+    self.scrollView.contentSize = CGSizeMake(414, 1287);
 }
 
 - (void)didReceiveMemoryWarning {

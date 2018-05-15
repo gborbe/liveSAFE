@@ -25,9 +25,21 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"restStopSegue"]) {
+    if ([segue.identifier isEqualToString:@"mealsSegue"]) {
         TabBarViewController *tabBarVC = (TabBarViewController *)segue.destinationViewController;
         tabBarVC.selectedChildViewController = 1;
+    }
+    if ([segue.identifier isEqualToString:@"shelterSegue"]) {
+        TabBarViewController *tabBarVC = (TabBarViewController *)segue.destinationViewController;
+        tabBarVC.selectedChildViewController = 0;
+    }
+    if ([segue.identifier isEqualToString:@"restStopSegue"]) {
+        TabBarViewController *tabBarVC = (TabBarViewController *)segue.destinationViewController;
+        tabBarVC.selectedChildViewController = 2;
+    }
+    if ([segue.identifier isEqualToString:@"accountSegue"]) {
+        TabBarViewController *tabBarVC = (TabBarViewController *)segue.destinationViewController;
+        tabBarVC.selectedChildViewController = 3;
     }
 }
 /*

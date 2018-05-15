@@ -72,6 +72,7 @@
             org.shelter = [[entry objectForKey:@"hasShelter"] boolValue];
             org.restStop = [[entry objectForKey:@"hasRest"] boolValue];
             org.about = [NSString stringWithString:[entry objectForKey:@"about"]];
+            org.lastUpdate = [NSString stringWithString:[entry objectForKey:@"lastUpdate"]];
             
             if (org.meals) {
                 [mealOrgs addObject:org];
@@ -169,6 +170,13 @@ error:(nullable NSError *)error {
 - (void)viewWillAppear:(BOOL)animated
 {
     self.selectedIndex = self.selectedChildViewController;
+    if (FIRAuth.auth.currentUser != nil) {
+        self.title = @"Account";
+        self.navigationItem.title = @"Account";
+    } else {
+        self.title = @"Login";
+        self.navigationItem.title = @"Login";
+    }
 }
 
 @end

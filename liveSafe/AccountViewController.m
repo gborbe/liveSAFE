@@ -36,7 +36,7 @@
         self.logoutButton.hidden = YES;
         self.loginButton.hidden = NO;
     }
-    [self buttonChange];
+//    [self buttonChange];
 }
 
 - (BOOL)loggedIn
@@ -99,25 +99,25 @@ didSignInWithUser:(nullable FIRUser *)user
 - (void)viewWillAppear:(BOOL)animated
 {
     [self setup];
-    if (!self.loggedIn) {
-    } else {
-        [self buttonChange];
-    }
+//    if (!self.loggedIn) {
+//    } else {
+//        [self buttonChange];
+//    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)buttonChange {
-    if (FIRAuth.auth.currentUser != nil) {
-        self.title = @"Account";
-        self.navigationItem.title = @"Account";
-    } else {
-        self.title = @"Login";
-        self.navigationItem.title = @"Login";
-    }
-}
+//- (void)buttonChange {
+//    if (FIRAuth.auth.currentUser != nil) {
+//        self.title = @"Account";
+//        self.navigationItem.title = @"Account";
+//    } else {
+//        self.title = @"Login";
+//        self.navigationItem.title = @"Login";
+//    }
+//}
 /*
 #pragma mark - Navigation
 
