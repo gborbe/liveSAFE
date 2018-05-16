@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="THg-C7-G9f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="THg-C7-G9f">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Lato-Black.ttf">
+            <string>Lato-Black</string>
+        </array>
         <array key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
         </array>
@@ -141,19 +144,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeG-Qb-RWC">
-                                <rect key="frame" x="182" y="246" width="50" height="32"/>
+                                <rect key="frame" x="175" y="246" width="65" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
-                                <state key="normal" title="Login"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="23"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.003578773932531476" green="0.77058428525924683" blue="0.73998957872390747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="dhb-o4-qcY" eventType="touchUpInside" id="KK9-eZ-gcH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organization Portal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1Z-E2-CSu">
-                                <rect key="frame" x="94" y="113" width="226" height="48"/>
+                                <rect key="frame" x="67" y="140" width="280" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="23"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="31"/>
+                                <color key="textColor" red="0.49509803921568629" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upw-up-Qi5">
@@ -176,14 +181,16 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lifesafe logo 3.1-2" translatesAutoresizingMaskIntoConstraints="NO" id="DXq-pc-loC">
-                                <rect key="frame" x="143" y="64" width="128" height="68"/>
+                                <rect key="frame" x="132" y="64" width="150" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vhX-2C-Nyc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Login" id="lES-O3-6ka"/>
+                    <tabBarItem key="tabBarItem" title="Login" id="lES-O3-6ka">
+                        <color key="badgeColor" red="0.003578773932531476" green="0.77058428525924683" blue="0.73998957872390747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="pZ0-P7-kCu"/>
                     <connections>
                         <outlet property="editButton" destination="5fl-kl-qM2" id="lA1-Lq-Lvx"/>
@@ -258,6 +265,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.003578773932531476" green="0.77058428525924683" blue="0.73998957872390747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="3g2-CC-9Gl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Resources" id="IOV-yT-hT6"/>
@@ -367,11 +375,11 @@
             </objects>
             <point key="canvasLocation" x="4388.4057971014499" y="-904.07608695652186"/>
         </scene>
-        <!--Login-->
+        <!--Navigation Controller-->
         <scene sceneID="LMO-eU-ElE">
             <objects>
                 <navigationController id="6YZ-2u-3WO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Login" image="person-15_69x69" selectedImage="person-15_69x69" id="s3P-Dg-Z5X"/>
+                    <tabBarItem key="tabBarItem" title="" image="person-15_69x69" selectedImage="halfbody-16" id="s3P-Dg-Z5X"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="af7-BL-TLO">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -459,11 +467,11 @@
             </objects>
             <point key="canvasLocation" x="2417.3913043478265" y="1333.6956521739132"/>
         </scene>
-        <!--Meals-->
+        <!--Navigation Controller-->
         <scene sceneID="QHL-Fp-cOh">
             <objects>
                 <navigationController restorationIdentifier="Food" id="TgO-65-WjH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Meals" image="fork-F_69x69" selectedImage="fork-F_69x69" id="kV9-SH-hIw"/>
+                    <tabBarItem key="tabBarItem" title="" image="fork-F_69x69" selectedImage="fork-F_69x69" id="kV9-SH-hIw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6a7-NU-ahV">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -520,7 +528,7 @@
                                                     <rect key="frame" x="301" y="15" width="54" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="0.056107677723830074" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food Text Field" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GH9-dy-2pq">
@@ -540,7 +548,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MZt-ni-MCu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qrh-tO-epT"/>
+                    <navigationItem key="navigationItem" id="qrh-tO-epT" colorLabel="IBBuiltInLabel-Gray"/>
                     <connections>
                         <outlet property="mapView" destination="RTO-Zo-cCA" id="tWY-j8-Mf1"/>
                         <outlet property="tableView" destination="FEG-AM-nHK" id="dQj-TM-NZR"/>
@@ -559,7 +567,16 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OzN-gr-LJX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.29633936285972595" green="0.83334964513778687" blue="0.79848366975784302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.29633936285972595" green="0.83334964513778687" blue="0.79848366975784302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.069225889220451683" green="0.19119649565764485" blue="0.18582461479006446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" red="0.14713594317436218" green="0.41666465997695923" blue="0.40133494138717651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="lE8-Ym-4Ld" kind="relationship" relationship="viewControllers" id="g0w-po-ysW"/>
@@ -584,27 +601,22 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Address Text" translatesAutoresizingMaskIntoConstraints="NO" id="4jg-D7-DCJ">
+                                <rect key="frame" x="215" y="415" width="179" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Phone Text" translatesAutoresizingMaskIntoConstraints="NO" id="rRq-6v-eq0">
                                 <rect key="frame" x="44" y="481" width="347" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Address Text" translatesAutoresizingMaskIntoConstraints="NO" id="4jg-D7-DCJ">
-                                <rect key="frame" x="44" y="415" width="350" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Space Text" translatesAutoresizingMaskIntoConstraints="NO" id="WnR-hg-LGR">
-                                <rect key="frame" x="44" y="613" width="347" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <color key="tintColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
@@ -612,79 +624,83 @@
                                 <rect key="frame" x="44" y="544" width="350" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <color key="tintColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Space Text" translatesAutoresizingMaskIntoConstraints="NO" id="WnR-hg-LGR">
+                                <rect key="frame" x="44" y="613" width="347" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yr9-yV-C8g">
-                                <rect key="frame" x="23" y="332" width="368" height="29"/>
+                                <rect key="frame" x="0.0" y="312" width="414" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Basic Info"/>
                                     <segment title="Our Services"/>
                                     <segment title="About Us"/>
                                 </segments>
+                                <color key="tintColor" red="0.0057284962385892868" green="0.76665562391281128" blue="0.73604828119277954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="innerTabChanged:" destination="35B-Dh-S6g" eventType="valueChanged" id="hDz-QU-smh"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pb-b7-Ocd">
-                                <rect key="frame" x="23" y="393" width="72" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
-                                <color key="textColor" red="0.420175701379776" green="0.4390416145324707" blue="0.43502932786941528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f0-6k-iV9">
-                                <rect key="frame" x="23" y="393" width="82" height="24"/>
+                                <rect key="frame" x="23" y="370" width="368" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
-                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requirements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcG-Bn-0cf">
-                                <rect key="frame" x="23" y="392" width="124" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
-                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="22"/>
+                                <color key="textColor" red="0.0057284962385892868" green="0.76665562391281128" blue="0.73604828119277954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2b-zG-Fn1">
-                                <rect key="frame" x="20" y="458" width="57" height="24"/>
+                                <rect key="frame" x="20" y="458" width="371" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
-                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="22"/>
+                                <color key="textColor" red="0.0057284962385892868" green="0.76665562391281128" blue="0.73604828119277954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXh-8W-d92">
-                                <rect key="frame" x="23" y="517" width="74" height="24"/>
+                                <rect key="frame" x="23" y="517" width="368" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
-                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="22"/>
+                                <color key="textColor" red="0.0057284962385892868" green="0.76665562391281128" blue="0.73604828119277954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Space" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLM-pc-FSg">
-                                <rect key="frame" x="23" y="587" width="52" height="24"/>
+                                <rect key="frame" x="23" y="587" width="371" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
-                                <color key="textColor" red="0.42017570139999999" green="0.43904161450000001" blue="0.43502932789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="22"/>
+                                <color key="textColor" red="0.0057284962385892868" green="0.76665562391281128" blue="0.73604828119277954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-tj-em2" userLabel="About Us Text">
                                 <rect key="frame" x="23" y="425" width="368" height="233"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <color key="textColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="require" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ElK-ud-cUg" userLabel="Require Text">
                                 <rect key="frame" x="23" y="425" width="368" height="233"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <color key="textColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home icon" translatesAutoresizingMaskIntoConstraints="NO" id="OkR-BZ-pa0">
+                                <rect key="frame" x="44" y="392" width="48" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ATY-Pg-aBb"/>
@@ -693,12 +709,11 @@
                     <connections>
                         <outlet property="aboutUsLabel" destination="6f0-6k-iV9" id="q2o-aK-jQX"/>
                         <outlet property="aboutUsText" destination="9cO-tj-em2" id="moI-16-P45"/>
-                        <outlet property="addressLabel" destination="7Pb-b7-Ocd" id="vAF-UV-pzk"/>
+                        <outlet property="addressIcon" destination="OkR-BZ-pa0" id="Acb-f7-CmJ"/>
                         <outlet property="addressText" destination="4jg-D7-DCJ" id="t9z-qq-HGE"/>
                         <outlet property="imageView" destination="ZDk-bq-Z7T" id="xD2-ow-K9D"/>
                         <outlet property="phoneLabel" destination="v2b-zG-Fn1" id="QFJ-tN-Tfp"/>
                         <outlet property="phoneText" destination="rRq-6v-eq0" id="Tfd-J9-bSk"/>
-                        <outlet property="requireLabel" destination="dcG-Bn-0cf" id="Ugy-pR-pQh"/>
                         <outlet property="requireText" destination="ElK-ud-cUg" id="KEV-B8-zxk"/>
                         <outlet property="segControl" destination="yr9-yV-C8g" id="Wmp-kw-fhS"/>
                         <outlet property="spaceLabel" destination="yLM-pc-FSg" id="1th-If-Jer"/>
@@ -709,13 +724,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rW6-Ik-nyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3536" y="-183"/>
+            <point key="canvasLocation" x="3534.7826086956525" y="-183.42391304347828"/>
         </scene>
-        <!--Shelters-->
+        <!--Navigation Controller-->
         <scene sceneID="TZ9-sf-kfc">
             <objects>
                 <navigationController restorationIdentifier="Shelters" automaticallyAdjustsScrollViewInsets="NO" id="via-DB-8rR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shelters" image="bed-F_1_69x69" selectedImage="bed-F_1_69x69" id="eOe-dN-bXd"/>
+                    <tabBarItem key="tabBarItem" title="" image="bed-F_1_69x69" selectedImage="bed-F_1_69x69" id="eOe-dN-bXd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bMv-yZ-UQ0">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -730,11 +745,13 @@
             </objects>
             <point key="canvasLocation" x="1358" y="608"/>
         </scene>
-        <!--Rest Stops-->
+        <!--Navigation Controller-->
         <scene sceneID="zMe-pn-SlX">
             <objects>
                 <navigationController restorationIdentifier="Rests" automaticallyAdjustsScrollViewInsets="NO" id="lE8-Ym-4Ld" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rest Stops" image="shower-F_69x69" selectedImage="shower-F_69x69" id="ar5-Qc-ycc"/>
+                    <tabBarItem key="tabBarItem" title="" image="shower-F_69x69" selectedImage="shower-F_69x69" id="ar5-Qc-ycc">
+                        <color key="badgeColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Ir-mW-z2B">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -752,12 +769,15 @@
     </scenes>
     <resources>
         <image name="bed-F_1_69x69" width="23" height="23"/>
-        <image name="fork-F_69x69" width="23" height="23"/>
+        <image name="fork-F_69x69" width="34" height="34"/>
+        <image name="halfbody-16" width="180" height="180"/>
+        <image name="home icon" width="256" height="256"/>
         <image name="lifesafe logo 3.1-2" width="683" height="384"/>
-        <image name="person-15_69x69" width="23" height="23"/>
-        <image name="shower-F_69x69" width="23" height="23"/>
+        <image name="person-15_69x69" width="34" height="34"/>
+        <image name="shower-F_69x69" width="34" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TF4-ZV-N0T"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.0057284962385892868" green="0.76665562391281128" blue="0.73604828119277954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
