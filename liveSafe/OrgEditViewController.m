@@ -28,6 +28,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdateDate;
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdateSpace;
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdateTitle;
+@property (weak, nonatomic) IBOutlet UISwitch *shelterBool;
+@property (weak, nonatomic) IBOutlet UISwitch *mealBool;
+@property (weak, nonatomic) IBOutlet UISwitch *restBool;
 
 @property (weak, nonatomic) IBOutlet UITextField *orgTitleEditField;
 @property (weak, nonatomic) IBOutlet UITextField *orgAddressEditField;
@@ -105,6 +108,14 @@
         self.userOrg.maxSpace = [collection objectForKey:@"maxSpace"];
         self.userOrg.lastUpdate = [collection objectForKey:@"lastUpdate"];
         
+        NSString *shelterCheck = [collection objectForKey:@"hasShelter"];
+        NSString *restCheck = [collection objectForKey:@"hasRest"];
+        NSString *mealCheck = [collection objectForKey:@"hasMeals"];
+        
+        self.userOrg.shelter = [shelterCheck boolValue];
+        self.userOrg.restStop = [restCheck boolValue];
+        self.userOrg.meals = [mealCheck boolValue];
+        
         self.spacesLabel.text = self.userOrg.space;
         self.orgTitle.text = self.userOrg.name;
         self.stepper.value = [self.userOrg.space doubleValue];
@@ -113,6 +124,9 @@
         self.lastUpdateDate.text = self.userOrg.lastUpdate;
         NSString *spaceString = @"Space: ";
         self.lastUpdateSpace.text = [spaceString stringByAppendingString:self.userOrg.space];
+        self.shelterBool.on = self.userOrg.shelter;
+        self.mealBool.on = self.userOrg.meals;
+        self.restBool.on = self.userOrg.restStop;
         
         self.orgTitleEditField.placeholder = self.userOrg.name;
         self.orgAddressEditField.placeholder = self.userOrg.address;
