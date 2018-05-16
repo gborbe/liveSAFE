@@ -1,13 +1,17 @@
 {
   "images" : [
     {
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "person-15_69x69.png",
-      "unassigned" : true,
+      "filename" : "halfbody-16.png",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

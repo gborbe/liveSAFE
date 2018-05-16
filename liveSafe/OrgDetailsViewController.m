@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *webText;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *addressIcon;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *webLabel;
 @property (weak, nonatomic) IBOutlet UILabel *spaceLabel;
@@ -40,7 +40,7 @@
         self.phoneText.hidden = NO;
         self.webText.hidden = NO;
         self.spaceText.hidden = NO;
-        self.addressLabel.hidden = NO;
+        self.addressIcon.hidden = NO;
         self.phoneLabel.hidden = NO;
         self.webLabel.hidden = NO;
         self.spaceLabel.hidden = NO;
@@ -53,7 +53,7 @@
         self.phoneText.hidden = YES;
         self.webText.hidden = YES;
         self.spaceText.hidden = YES;
-        self.addressLabel.hidden = YES;
+        self.addressIcon.hidden = YES;
         self.phoneLabel.hidden = YES;
         self.webLabel.hidden = YES;
         self.spaceLabel.hidden = YES;
@@ -66,7 +66,7 @@
         self.phoneText.hidden = YES;
         self.webText.hidden = YES;
         self.spaceText.hidden = YES;
-        self.addressLabel.hidden = YES;
+        self.addressIcon.hidden = YES;
         self.phoneLabel.hidden = YES;
         self.webLabel.hidden = YES;
         self.spaceLabel.hidden = YES;
