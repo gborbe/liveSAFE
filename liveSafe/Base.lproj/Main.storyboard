@@ -962,12 +962,18 @@
     <resources>
         <image name="bed-F" width="180" height="180"/>
         <image name="bed-F_1_69x69" width="23" height="23"/>
+        <image name="fork" width="100" height="100"/>
         <image name="fork-F_69x69" width="34" height="34"/>
         <image name="halfbody-16" width="180" height="180"/>
         <image name="home icon" width="256" height="256"/>
         <image name="lifesafe logo 3.1-2" width="683" height="384"/>
         <image name="person-15_69x69" width="34" height="34"/>
+        <image name="plate" width="1597" height="1119"/>
+        <image name="rain" width="708" height="340"/>
+        <image name="rootsshelter" width="1075" height="418"/>
+        <image name="shower-F" width="180" height="180"/>
         <image name="shower-F_69x69" width="34" height="34"/>
+        <image name="sweaters" width="708" height="340"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qHx-ys-ZOC"/>
