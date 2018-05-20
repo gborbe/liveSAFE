@@ -73,6 +73,7 @@
     [self.stepper setIncrementImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
     [self.stepper setDecrementImage:[UIImage imageNamed:@"minus.png"] forState:UIControlStateNormal];
     [self.stepper setBackgroundImage:[UIImage imageNamed:@"stepBkg.png"] forState:UIControlStateNormal];
+//    [self.stepper setBackgroundImage:[UIImage imageNamed:@"stepHi.png"] forState:UIControlStateHighlighted];
 }
 
 - (void)getDatabaseNodeToChange{

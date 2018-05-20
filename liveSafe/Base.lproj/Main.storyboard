@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="THg-C7-G9f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cMA-Pp-IO7">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -290,11 +290,11 @@
             <objects>
                 <viewController id="AtN-LP-A4v" customClass="OrgEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0wE-h0-ih6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="nrx-hq-nj6">
-                                <rect key="frame" x="0.0" y="64" width="414" height="1287"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdH-DC-ceS">
@@ -453,7 +453,6 @@
                         <viewLayoutGuide key="safeArea" id="0Ye-4n-h8E"/>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced Details" id="DJr-0P-S2V"/>
-                    <size key="freeformSize" width="414" height="1400"/>
                     <connections>
                         <outlet property="mealBool" destination="Lf6-Os-ogG" id="3Ja-9c-Gvu"/>
                         <outlet property="orgAddressEditField" destination="Ioh-GB-Ko9" id="0vI-rr-Ycn"/>
@@ -474,7 +473,7 @@
         <scene sceneID="LMO-eU-ElE">
             <objects>
                 <navigationController id="6YZ-2u-3WO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="person-15_69x69" selectedImage="halfbody-16" id="s3P-Dg-Z5X"/>
+                    <tabBarItem key="tabBarItem" title="" image="halfbody-16_69x69" selectedImage="halfbody-16_69x69" id="s3P-Dg-Z5X"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="af7-BL-TLO">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -880,19 +879,44 @@
                                 <color key="textColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="require" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ElK-ud-cUg" userLabel="Require Text">
-                                <rect key="frame" x="23" y="425" width="368" height="233"/>
+                                <rect key="frame" x="20" y="548" width="368" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requirements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYp-1v-HsC">
+                                <rect key="frame" x="20" y="512" width="368" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="22"/>
+                                <color key="textColor" red="0.0057284962389999999" green="0.76665562389999997" blue="0.73604828119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="require" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UQV-RS-xIr" userLabel="Services Text">
+                                <rect key="frame" x="23" y="393" width="368" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.419034034" green="0.43939396739999997" blue="0.43530359860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home icon" translatesAutoresizingMaskIntoConstraints="NO" id="OkR-BZ-pa0">
                                 <rect key="frame" x="44" y="392" width="48" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lca-zW-XhE">
+                                <rect key="frame" x="20" y="367" width="368" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="22"/>
+                                <color key="textColor" red="0.0057284962389999999" green="0.76665562389999997" blue="0.73604828119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ATY-Pg-aBb"/>
@@ -906,8 +930,11 @@
                         <outlet property="imageView" destination="ZDk-bq-Z7T" id="xD2-ow-K9D"/>
                         <outlet property="phoneLabel" destination="v2b-zG-Fn1" id="QFJ-tN-Tfp"/>
                         <outlet property="phoneText" destination="rRq-6v-eq0" id="Tfd-J9-bSk"/>
+                        <outlet property="requireLabel" destination="OYp-1v-HsC" id="IGD-eG-KTY"/>
                         <outlet property="requireText" destination="ElK-ud-cUg" id="KEV-B8-zxk"/>
                         <outlet property="segControl" destination="yr9-yV-C8g" id="Wmp-kw-fhS"/>
+                        <outlet property="servicesLabel" destination="lca-zW-XhE" id="13f-Cb-kb1"/>
+                        <outlet property="servicesText" destination="UQV-RS-xIr" id="sek-6q-ssO"/>
                         <outlet property="spaceLabel" destination="yLM-pc-FSg" id="1th-If-Jer"/>
                         <outlet property="spaceText" destination="WnR-hg-LGR" id="jDj-qF-azE"/>
                         <outlet property="webLabel" destination="HXh-8W-d92" id="3Kz-VD-cxN"/>
@@ -965,9 +992,9 @@
         <image name="fork" width="100" height="100"/>
         <image name="fork-F_69x69" width="34" height="34"/>
         <image name="halfbody-16" width="180" height="180"/>
+        <image name="halfbody-16_69x69" width="34" height="34"/>
         <image name="home icon" width="256" height="256"/>
         <image name="lifesafe logo 3.1-2" width="683" height="384"/>
-        <image name="person-15_69x69" width="34" height="34"/>
         <image name="plate" width="1597" height="1119"/>
         <image name="rain" width="708" height="340"/>
         <image name="rootsshelter" width="1075" height="418"/>
@@ -976,7 +1003,7 @@
         <image name="sweaters" width="708" height="340"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qHx-ys-ZOC"/>
+        <segue reference="dXt-P0-DU2"/>
         <segue reference="V2P-8W-8lU"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0057284962385892868" green="0.76665562391281128" blue="0.73604828119277954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -1,13 +1,8 @@
 {
   "images" : [
     {
-      "idiom" : "universal"
-    },
-    {
       "idiom" : "universal",
-      "filename" : "person-15_69x69.png",
-      "unassigned" : true,
-      "scale" : "2x"
+      "filename" : "person-15_69x69.png"
     }
   ],
   "info" : {

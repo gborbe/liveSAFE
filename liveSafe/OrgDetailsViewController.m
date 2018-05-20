@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *aboutUsText;
 @property (weak, nonatomic) IBOutlet UITextView *requireText;
 @property (weak, nonatomic) IBOutlet UILabel *requireLabel;
+@property (weak, nonatomic) IBOutlet UILabel *servicesLabel;
+@property (weak, nonatomic) IBOutlet UITextView *servicesText;
 
 @end
 
@@ -48,6 +50,8 @@
         self.aboutUsText.hidden = YES;
         self.requireLabel.hidden = YES;
         self.requireText.hidden = YES;
+        self.servicesText.hidden = YES;
+        self.servicesLabel.hidden = YES;
     } else if (self.segControl.selectedSegmentIndex == 1) {
         self.addressText.hidden = YES;
         self.phoneText.hidden = YES;
@@ -61,6 +65,8 @@
         self.aboutUsText.hidden = YES;
         self.requireLabel.hidden = NO;
         self.requireText.hidden = NO;
+        self.servicesText.hidden = NO;
+        self.servicesLabel.hidden = NO;
     } else if (self.segControl.selectedSegmentIndex == 2) {
         self.addressText.hidden = YES;
         self.phoneText.hidden = YES;
@@ -74,6 +80,8 @@
         self.aboutUsText.hidden = NO;
         self.requireLabel.hidden = YES;
         self.requireText.hidden = YES;
+        self.servicesText.hidden = YES;
+        self.servicesLabel.hidden = YES;
     }
 }
 
@@ -101,6 +109,7 @@
     self.imageView.image = [UIImage imageWithData:imgData];
     self.aboutUsText.text = self.orgDetails.about;
     self.requireText.text = self.orgDetails.requirements;
+    self.servicesText.text = self.orgDetails.servicesDescription;
 }
 
 @end
